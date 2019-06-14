@@ -1,0 +1,47 @@
+body {
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: .95;
+}
+nav a.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+}
+
+nav button.navbar-toggler {
+  color: #FF6978 !important;
+}
+
+nav a i {
+  color: #FF6978;
+  font-size: 45px;
+}
+button.btn.btn-secondary{
+width: 80%;
+margin: 2% auto;
+display: block;
+background-color: black;
+color: white;
+font-size: 200%;
+}
+div.dropdown-menu p{
+font-size: 40px;
+}
+div.pregunta{
+  width: 90%;
+  padding: 10%;
+  box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+  padding: 2%;
+  background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+  margin: 5% auto;
+}
+div.pregunta h1{
+  font-size: 500%;
+  font-family: 'Playfair Display', serif;
+  color: #3e403f;
+  text-align: center;
+ font-weight: bold;
+}
