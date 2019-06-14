@@ -1,0 +1,155 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav a.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+}
+
+nav button.navbar-toggler {
+  color: #FF6978 !important;
+}
+
+nav a i {
+  color: #FF6978;
+  font-size: 45px;
+}
+
+h1 {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 6%;
+}
+
+div.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5%;
+  position: relative;
+}
+
+#boton {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  position: absolute;
+  left: 26%;
+  top: 87%;
+  padding: 1%;
+  width: 14%;
+}
+
+hr {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid #21252966;
+}
+
+div.lista ul {
+  padding-inline-start: 0px;
+  margin-left: -12%;
+}
+
+div.lista ul li {
+  font-family: 'Inconsolata', monospace;
+  list-style: none;
+}
+
+div.lista ul li span {
+  font-family: 'Cookie', cursive;
+  font-size: 26px;
+}
+
+div.lista ul li i {
+  font-size: 15px;
+}
+
+div.lista button {
+  border: 3px solid #F0386B;
+  border-radius: 6px 6px;
+  font-family: 'Inconsolata', monospace;
+  padding: 1%;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 3%;
+}
+
+div.leyenda {
+  font-family: 'Inconsolata', monospace;
+  background-color: #FFD0D9;
+  color: black;
+  width: 60%;
+  text-align: center;
+  font-weight: lighter;
+  transform: rotate(7deg);
+  padding-top: 4%;
+}
+
+div.leyenda h2 {
+  font-weight: bold;
+}
+
+div.leyenda h3 {
+  width: 100%;
+}
+
+div.categorias {
+  width: 95%;
+}
+
+article.cat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+div.texto button {
+  background-color: black;
+  color: white;
+  font-size: 22px;
+  border-radius: 13px 13px;
+  letter-spacing: 2px;
+  padding: 6%;
+  margin-top: 31%;
+  margin-left: 21%;
+}
+
+div.texto h2 {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  margin-left: 19%;
+  margin-top: 8%;
+}
+
+div.texto {
+  width: 50%;
+}
+
+div.imagen {
+  width: 50%;
+}
+
+footer ul li {
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  background-color: #FF6978;
+  color: black;
+  margin-top: 1%;
+}
+
+footer ul {
+  padding-inline-start: 0px;
+}

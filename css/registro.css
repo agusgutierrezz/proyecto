@@ -1,0 +1,80 @@
+body {
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: .95;
+}
+
+nav a.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+}
+
+nav button.navbar-toggler {
+  color: #FF6978 !important;
+}
+
+nav a i {
+  color: #FF6978;
+  font-size: 45px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  text-align: center;
+  color: #3e403f;
+  padding: 3%;
+  margin-top: 6%;
+}
+
+h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 47%;
+  margin-left: 26%;
+}
+
+div.form {
+  width: 80%;
+  margin: 5% auto;
+}
+
+input.form-control {
+  border-bottom: 1px solid white;
+}
+
+select.form-control {
+  border-bottom: 1px solid white;
+}
+
+input.form-check-input {
+  border-bottom: 1px solid white;
+}
+
+div.form label {
+  font-family: "Inconsolata", sans-serif;
+  text-align: center;
+  color: black;
+}
+
+span {
+  color: #FF6978;
+  font-weight: bold;
+}
+
+div.form button {
+  width: 50%;
+  font-family: 'Playfair Display', serif;
+  padding: 3%;
+  margin: 0 23%;
+  background-color: white;
+  font-size: 150%;
+  font-weight: bold;
+  color: #3e403f;
+  border: 0px;
+}

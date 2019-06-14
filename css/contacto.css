@@ -1,0 +1,120 @@
+nav a.navbar-brand{
+color: white!important;
+font-weight: bold;
+font-family: 'Oswald', sans-serif;
+font-size: 30px;
+}
+nav button.navbar-toggler{
+color: #FF6978!important;
+}
+nav a i{
+color: #FF6978;
+font-size: 45px;
+}
+body{
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: .95;
+
+}
+.formulario{
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+}
+div.formulario header{
+  text-align: center;
+}
+.formulario h2{
+  font-size: 500%;
+    font-family: 'Playfair Display', serif;
+    color: #3e403f;
+    padding: 10%;
+}
+
+.formulario p{
+  letter-spacing: 0.05em;
+  font-family: 'Abel', sans-serif;
+  font-size: 250%;
+  width: 40%;
+display: inline;
+ font-weight: bold;
+ padding: 10%;
+ color: #3e403f;
+
+}
+div.field-set input{
+
+    margin: 3%;
+    width: 80%;
+    border: 0px;
+}
+textarea{
+      margin: 3%;
+      width: 80%;
+      border: 0px;
+}
+input#txt-input{
+  font-size: 300%;
+  font-family: 'Playfair Display', serif;
+}
+textarea{
+  font-size: 300%;
+  font-family: 'Playfair Display', serif;
+}
+div.field-set button.log-in{
+  width: 80%;
+  font-family: 'Playfair Display', serif;
+  padding: 3%;
+  margin-top: 10%;
+background-color: white;
+font-size: 350%;
+font-weight: bold;
+color: #3e403f;
+}
+div.other{
+margin:0% 10%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+
+}
+button.btn.submits.frgt-pass{
+  width: 18%;
+display: block;
+  font-size: 180%;
+  font-weight: bold;
+}
+button.btn.submits.sign-up{
+color: #252537;
+display: block;
+width: 50%;
+padding: 5%;
+font-size: 180%;
+font-weight: bold;
+border-radius: 5px;
+border: none;
+text-align: center;
+margin: 7% auto;
+letter-spacing: 0.05em;
+background-color: #E3FDF5;
+}
+div.other p{
+  width: 100%;
+  padding-top: 3%;
+  color: #3e403f;
+}
+div.redes{
+  display: flex;
+  justify-content: space-around;
+}
+div.redes i{
+  font-size: 80px;
+  color: #3e403f;
+}
