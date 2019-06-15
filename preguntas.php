@@ -2,16 +2,10 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur">
-  <link href="https://fonts.googleapis.com/css?family=Oswald|Pathway+Gothic+One|Source+Sans+Pro&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/14dd9125ec.js"></script>
-  <link rel="stylesheet" href="css/preguntas.css">
+  <?php include("head.php") ?>
+  <link rel="stylesheet" href="./css/preguntas.css">
+    <title>Login</title>
 </head>
-
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -21,11 +15,11 @@
       <a class="navbar-brand" href="#">
         <i class="fas fa-heart"></i>
       </a>
-      <a class="navbar-brand" href="#">INGRESAR</a>
+      <a class="navbar-brand" href="login.php">INGRESAR</a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
