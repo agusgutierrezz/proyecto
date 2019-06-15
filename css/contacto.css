@@ -118,3 +118,17 @@ div.redes i{
   font-size: 80px;
   color: #3e403f;
 }
+footer ul li {
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  background-color: #FF6978;
+  color: black;
+  margin-top: 1%;
+}
+
+footer ul {
+  padding-inline-start: 0px;
+}
