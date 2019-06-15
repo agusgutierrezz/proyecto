@@ -42,7 +42,7 @@
   </div>
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Lorem ipsum dolor sit amet?
+      Como hago para vender?
   </button>
   <div class="dropdown-menu p-4 text-muted" style="max-width: 780px;">
   <p>
