@@ -3,7 +3,7 @@ footer ul li {
   list-style: none;
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 40px;
+  font-size: 13px;
   background-color: #FF6978;
   color: black;
   margin-top: 1%;
@@ -11,4 +11,18 @@ footer ul li {
 
 footer ul {
   padding-inline-start: 0px;
+}
+
+@media (min-width: 940px){
+footer ul li{
+  width: 19%;
+  float: left;
+  margin: 3% 3%;
+ border-radius: 13px 13px;
+ padding: 1%;
+}
+footer ul{
+  padding-bottom: 5%;
+  margin: 0 auto;
+}
 }

@@ -26,7 +26,7 @@ body {
   width: 80%;
   text-align: center;
   border-radius: 5px;
-  margin: 20% auto;
+  margin: 15% auto;
   box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
   padding: 2%;
   background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
@@ -37,21 +37,20 @@ div.formulario header {
 }
 
 .formulario h2 {
-  font-size: 500%;
+  font-size: 248%;
   font-family: 'Playfair Display', serif;
   color: #3e403f;
-  padding: 10%;
 }
 
 .formulario p {
   letter-spacing: 0.05em;
-  font-family: 'Abel', sans-serif;
-  font-size: 250%;
-  width: 40%;
-  display: inline;
-  font-weight: bold;
-  padding: 10%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 87%;
+  width: 100%;
   color: #3e403f;
+  text-align: center;
+  margin-bottom: 0%;
+  margin-top: 2%;
 }
 
 div.field-set input {
@@ -61,28 +60,27 @@ div.field-set input {
 }
 
 input#pwd {
-  font-size: 300%;
+  font-size: 117%;
   font-family: 'Playfair Display', serif;
 }
 
 input#txt-input {
-  font-size: 300%;
+  font-size: 117%;
   font-family: 'Playfair Display', serif;
 }
 
 div.field-set button.log-in {
   width: 80%;
   font-family: 'Playfair Display', serif;
-  padding: 3%;
-  margin-top: 10%;
+  margin-top: 6%;
   background-color: white;
-  font-size: 350%;
+  font-size: 170%;
   font-weight: bold;
   color: #3e403f;
 }
 
 div.other {
-  margin: 10% 14%;
+  margin: 5% 14%;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -91,7 +89,7 @@ div.other {
 button.btn.submits.frgt-pass {
   width: 18%;
   display: block;
-  font-size: 180%;
+  font-size: 77%;
   font-weight: bold;
 }
 
@@ -100,7 +98,6 @@ button.btn.submits.sign-up {
   display: block;
   width: 50%;
   padding: 5%;
-  font-size: 180%;
   font-weight: bold;
   border-radius: 5px;
   border: none;
@@ -108,4 +105,45 @@ button.btn.submits.sign-up {
   margin: 7% auto;
   letter-spacing: 0.05em;
   background-color: #E3FDF5;
+}
+@media (min-width: 940px){
+.formulario{
+  margin: 2% auto;
+  padding: 0%;
+  width: 70%;
+}
+.formulario h2{
+  font-size: 500%;
+}
+div.field-set input{
+  width: 40%;
+  padding: 1%;
+}
+textarea{
+      width: 40%;
+      padding: 0%;
+}
+input#txt-input{
+margin:1%;
+}
+input#pwd {
+  margin:1%;
+}
+div.field-set button.log-in{
+      width: 40%;
+      margin-top: 1%;
+}
+div.other{
+  width: 55%;
+  margin: 0 25%;
+}
+button.btn.submits.frgt-pass {
+width: 29%;
+display: block;
+font-size: 130%;
+font-weight: bold;
+}
+button.btn.submits.sign-up{
+font-size: 130%;
+}
 }

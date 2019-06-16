@@ -21,7 +21,7 @@ nav a i {
 h1 {
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
   margin-top: 6%;
 }
@@ -40,65 +40,71 @@ div.head {
   color: white;
   position: absolute;
   left: 26%;
-  top: 87%;
+  top: 71%;
   padding: 1%;
-  width: 14%;
+  width: 25%;
+
 }
 
 hr {
-  margin-top: 4rem;
   margin-bottom: 1rem;
   border: 0;
   border-top: 2px solid #21252966;
 }
 
 div.lista ul {
-  padding-inline-start: 0px;
-  margin-left: -12%;
+padding-inline-start: 0px;
+width: 100%;
 }
 
 div.lista ul li {
   font-family: 'Inconsolata', monospace;
   list-style: none;
+font-size: 70%;
 }
 
 div.lista ul li span {
   font-family: 'Cookie', cursive;
-  font-size: 26px;
+  font-size: 150%;
 }
 
 div.lista ul li i {
-  font-size: 15px;
+  font-size: 70%;
 }
 
 div.lista button {
-  border: 3px solid #F0386B;
+  border: 2px solid #F0386B;
   border-radius: 6px 6px;
   font-family: 'Inconsolata', monospace;
   padding: 1%;
   background-color: white;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   margin-top: 3%;
 }
 
 div.leyenda {
   font-family: 'Inconsolata', monospace;
-  background-color: #FFD0D9;
-  color: black;
-  width: 60%;
-  text-align: center;
-  font-weight: lighter;
-  transform: rotate(7deg);
-  padding-top: 4%;
+background-color: #FFD0D9;
+color: black;
+width: 55%;
+text-align: center;
+font-weight: lighter;
+transform: rotate(7deg);
+padding-top: 4%;
+height: 10%;
+margin-left: 6%;
+
 }
 
 div.leyenda h2 {
   font-weight: bold;
+    font-size: 88%;
 }
 
 div.leyenda h3 {
   width: 100%;
+    font-size: 70%;
 }
 
 div.categorias {
@@ -108,25 +114,25 @@ div.categorias {
 article.cat {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 5%;
 }
 
 div.texto button {
   background-color: black;
-  color: white;
-  font-size: 22px;
-  border-radius: 13px 13px;
-  letter-spacing: 2px;
-  padding: 6%;
-  margin-top: 31%;
-  margin-left: 21%;
+    color: white;
+    font-size: 12px;
+    border-radius: 13px 13px;
+    letter-spacing: 2px;
+    padding: 6%;
+    margin-top: 21%;
+    margin-left: 17%;
 }
 
 div.texto h2 {
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
-  font-size: 40px;
+  font-size: 18px;
   margin-left: 19%;
   margin-top: 8%;
 }
@@ -138,18 +144,51 @@ div.texto {
 div.imagen {
   width: 50%;
 }
-
-footer ul li {
+div.imagen img{
   width: 100%;
-  list-style: none;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-size: 40px;
-  background-color: #FF6978;
-  color: black;
-  margin-top: 1%;
+}
+@media (min-width: 940px){
+body{
+  width: 90%;
+  margin: 0 auto;
+}
+  div.leyenda h2 {
+      font-size: 200%;
+  }
+
+  div.leyenda h3 {
+      font-size: 150%;
+  }
+div.leyenda{
+  margin-left: 0%;
+  padding-top: 1%;
+  width: 40%;
 }
 
-footer ul {
-  padding-inline-start: 0px;
+#boton{
+  top:60%;
+}
+div.lista ul li {
+font-size: 120%;
+margin: -6%;
+}
+
+div.lista ul li span {
+  font-size: 250%;
+}
+
+div.lista ul li i {
+  font-size: 120%;
+}
+div.categorias{
+overflow: hidden;
+margin: 0 10%;
+}
+article.cat{
+  width: 40%;
+  float: left;
+}
+footer ul li{
+  width: 12%;
+}
 }

@@ -29,15 +29,11 @@
       <div class="other">
         <button class="btn submits frgt-pass">Forgot Password</button>
         <button class="btn submits sign-up"><a href='registro.php'>Registrarme</a>
-          <i class="fa fa-user-plus" aria-hidden="true"></i>
         </button>
       </div>
   </div>
   </form>
   </div>
-
 </body>
-<footer>
-<?php include("footer.php") ?>
-</footer>
+
 </html>

@@ -37,20 +37,22 @@ div.inicio h1 {
   font-family: "Inconsolata", sans-serif;
   font-weight: bold;
   padding-top: 4%;
+  font-size: 200%;
 }
 
 div.inicio h2 {
   font-family: "Inconsolata", sans-serif;
   width: 80%;
   margin: 27px auto;
+  font-size: 120%;
 }
 
 div.inicio i {
-  position: absolute;
-  font-size: 60px;
-  top: 16%;
-  right: 79%;
-  color: white;
+    position: absolute;
+    font-size: 31px;
+    top: 78%;
+    right: 47%;
+    color: white;
 }
 
 hr {

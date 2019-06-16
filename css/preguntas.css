@@ -25,13 +25,13 @@ margin: 2% auto;
 display: block;
 background-color: black;
 color: white;
-font-size: 200%;
+font-size: 80%;
 }
 div.dropdown-menu p{
 font-size: 40px;
 }
 div.pregunta{
-  width: 90%;
+  width: 60%;
   padding: 10%;
   box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
   padding: 2%;
@@ -39,9 +39,15 @@ div.pregunta{
   margin: 5% auto;
 }
 div.pregunta h1{
-  font-size: 500%;
+  font-size: 250%;
   font-family: 'Playfair Display', serif;
   color: #3e403f;
   text-align: center;
  font-weight: bold;
+}
+@media (min-width: 940px){
+main{
+  width: 75%;
+  margin: 0 auto;
+}
 }
