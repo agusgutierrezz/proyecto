@@ -36,27 +36,7 @@ if ($_GET){
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-heart"></i>
-      </a>
-      <a class="navbar-brand" href="login.php">INGRESAR</a>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
+  <?php include("header.php") ?>
   </header>
   <main>
     <div class="inicio">
@@ -88,25 +68,30 @@ if ($_GET){
     </div>
     </div>
     <hr>
-    <?php foreach (datos_ferias($categoria) as $feria) :?>
-    <div class="feria">
-      <div class="header-feria">
-        <h3><?php echo $feria["nombre"] ?></h3>
-        <h5><?php echo $feria["ubicacion"] ?></h5>
-        <i class="fas fa-store"></i>
-        <img src="images/mapa.jpeg" alt="">
-        <button type="button" name="button"><a href="feria.php?id=<?= $feria["id"]?>" >Ver feria!</a></button>
-      </div>
-      <div class="cuerpo-feria">
-        <div class="descripcion">
-          <?php echo $feria["descripcion"] ?>
+    <?php if(empty(datos_ferias($categoria))) :?>
+       <p style="color:red">Lo Sentimos No Hay Datos para la Categoria seleccionada</p>
+    <?php endif ;?>
+    <?php if(!empty(datos_ferias($categoria))) :?>
+        <?php foreach (datos_ferias($categoria) as $feria) :?>
+        <div class="feria">
+          <div class="header-feria">
+            <h3><?php echo $feria["nombre"] ?></h3>
+            <h5><?php echo $feria["ubicacion"] ?></h5>
+            <i class="fas fa-store"></i>
+            <img src="images/mapa.jpeg" alt="">
+            <button type="button" name="button"><a href="feria.php?id=<?= $feria["id"]?>" >Ver feria!</a></button>
+          </div>
+          <div class="cuerpo-feria">
+            <div class="descripcion">
+              <?php echo $feria["descripcion"] ?>
+            </div>
+            <img src="images/sillon.jpg" alt="">
+            <img src="images/vajilla.jpg" alt="">
+            <img src="images/ropa.jpg" alt="">
+          </div>
         </div>
-        <img src="images/sillon.jpg" alt="">
-        <img src="images/vajilla.jpg" alt="">
-        <img src="images/ropa.jpg" alt="">
-      </div>
-    </div>
-    <?php endforeach ?>
+        <?php endforeach ?>
+     <?php endif; ?>
   </main>
   <footer>
   <?php include("footer.php") ?>

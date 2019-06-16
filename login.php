@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+<?php
+require_once("./resources/funciones_usuarios.php");
+
+if (estaLogueado()) {
+  header("location:home.php");exit;
+}
+
+if ($_POST) {
+  $errores = validarLogin($_POST);
+
+  if (count($errores) == 0) {
+    loguear($_POST["email"]);
+    header("location:home.php");exit;
+  } else {
+    foreach ($errores as $error) {
+       $error;
+    }
+  }
+}
+
+ ?>
 <html lang="en" dir="ltr">
 <head>
   <?php
@@ -16,13 +36,16 @@
     <form method="post" action="login.php">
       <header class="head-form">
         <h2>Log In</h2>
-        <p>Inicia sesion aca con tu email y contraseña.</p>
+        <p>Inicia sesion acá con tu email y contraseña.</p>
       </header>
       <br>
+      <?php if(isset($error)) :?>
+      <p style="color:red; font-size:12px;"><?=$error?></a></p>
+      <?php endif; ?>
       <div class="field-set">
-        <input class="form-input" id="txt-input" type="text" placeholder="Email" required>
+        <input class="form-input" id="txt-input" type="text" placeholder="Email" name="email" required>
         <br>
-        <input class="form-input" type="password" placeholder="Contrasena" id="pwd" name="password" required>
+        <input class="form-input" type="password" placeholder="Contraseña" id="pwd" name="pass" required>
         <br>
         <button class="log-in"> Log In </button>
       </div>
