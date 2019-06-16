@@ -1,55 +1,14 @@
 <?php
+require_once("./resources/funciones_usuarios.php");
+
 $nombre="";
 $apellido="";
 $email="";
 $errores =[];
+
 if ($_POST) {
-
-// Leer los datos del formulario
-  $nombre = $_POST["nombre"];
-  $apellido = $_POST["apellido"];
-  $email = $_POST["email"];
-  $pass = $_POST["pass"];
-  $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-  $pass_confirm = $_POST["pass_confirm"];
-  $pass_verify = password_verify($pass, $pass_hash);
-  $id = rand(999,989889898989);
-
-  if(strlen($nombre) < 5) {
-    $errores []= "El nombre debe teber al menos 5 caracteres";
-  }
-  if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-      $errores[] ="El mail no tiene el formato correcto <br>";
-    }
-    if (strlen($pass) < 8) {
-      $errores[] ="La contraseña debe tener al menos 8 digitos";
-    }
-    if (!preg_match('`[a-z]`', $pass)){
-      $errores[] = "La clave debe tener al menos una letra";
-    }
-    if (!preg_match('`[0-9]`',$pass)){
-      $errores[] = "La clave debe tener al menos un caracter numérico";
-    }
-    if ($pass !== $pass_confirm) {
-      $errores[] = "Las contranseñas no verifican";
-    }
-
-  if(empty($errores)){
-    //guardar los datos en un archivo
-    //mover foto
-
-    $miarchivo = dirname(_FILE_);
-    $miarchivo = $miarchivo. "/img/";
-    $miarchivo = $miarchivo. $pic_name;
-    move_uploaded_file( $archivo , $miarchivo);
-
-    save_registered_user($nombre, $email, $pass_hash, $id, $pic_name, $ext);
-
-    header("location: register_success.html");
-
-  }
+  $errores = validarRegistracion($_POST);
 }
-
 
  ?>
 <html lang="en">
@@ -67,9 +26,6 @@ if ($_POST) {
    ?>
 </header>
   <body>
-    <?php
-    include("funciones.php");
-     ?>
   <div class="form">
     <h1>Registro</h1>
     <form method="post" action="registro.php">
@@ -107,7 +63,7 @@ if ($_POST) {
     </form>
     <ul>
       <?php foreach ($errores as $error) :?>
-        <li><?=$error?></a></li>
+        <li style="color:red"><?=$error?></a></li>
       <?php endforeach; ?>
     </ul>
   </div>
