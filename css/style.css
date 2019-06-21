@@ -13,6 +13,8 @@ nav button.navbar-toggler {
   color: #FF6978 !important;
 }
 
+
+
 nav a i {
   color: #FF6978;
   font-size: 45px;
@@ -45,6 +47,7 @@ div.head {
   width: 25%;
 
 }
+
 
 hr {
   margin-bottom: 1rem;
@@ -125,7 +128,7 @@ div.texto button {
     border-radius: 13px 13px;
     letter-spacing: 2px;
     padding: 6%;
-    margin-top: 21%;
+    margin-top: 8%;
     margin-left: 17%;
 }
 
@@ -191,4 +194,5 @@ article.cat{
 footer ul li{
   width: 12%;
 }
+
 }

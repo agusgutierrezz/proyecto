@@ -13,7 +13,13 @@ nav a.navbar-brand {
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
 }
-
+.descripcion {
+    display: flex;
+    /* float: right; */
+    /* margin-right: 5%; */
+    justify-content: space-around;
+    margin-top: 5%;
+}
 nav button.navbar-toggler {
   color: #FF6978 !important;
 }
@@ -118,7 +124,7 @@ div.header-feria img {
 div.cuerpo-feria {
   display: flex;
   justify-content: space-around;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 div.botones {

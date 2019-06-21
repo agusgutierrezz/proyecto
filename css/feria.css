@@ -58,6 +58,13 @@ div.info i {
     font-size: 31px;
     color: rgba(255, 145, 170, 1);
 }
+
+.ver_mas {
+    font-size: 12px;
+    display: block;
+    padding-top: 3%;
+}
+
 div.info a{
 text-decoration: none;
 font-family: "Inconsolata", sans-serif;

@@ -17,7 +17,7 @@ if ($_POST) {
   <?php
   include("head.php");
    ?>
-   <link rel="stylesheet" href="css/registro.css">
+   <link rel="stylesheet" href="./css/registro.css">
    <title>Registro</title>
 </head>
 <header>
