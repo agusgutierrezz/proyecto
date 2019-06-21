@@ -9,14 +9,19 @@
 </head>
   <body>
       <header>
-        <?php include("header_home.php") ?>
+        <?php include("header.php") ?>
         </header>
            <div class="head">
              <div class="leyenda">
                <h2>PUBlICA TU FERIA</h2>
                <h3>y compartila con tus clientes, ellos reservan los productos y los retiran ese dia!</h3>
              </div>
-             <button id="boton" type="button" name="button">VENDER!</button>
+             <?php if(estaLogueado()):?>
+             <a href="crear_feria.php"><button id="boton" type="button" name="button">CREA TU FERIA!!!!</button></a>
+            <?php endif ?>
+            <?php if(!estaLogueado()):?>
+            <a href="login.php"><button id="boton" type="button" name="button">Logueate y crea tu feria!</button></a>
+           <?php endif ?>
              <div class="lista">
                <ul>
                  <li><i class="fas fa-star-of-life"></i>
@@ -35,7 +40,8 @@
             <article class="cat">
             <div class="texto">
             <h2>ROPA Y ACCESORIOS</h2>
-            <button type="button" name="button"><a href="ferias.php?categoria=ropa_accesorios">VER LAS FERIAS</a></button>
+            <a href="ferias.php?categoria=ropa_accesorios"><button type="button" name="button">VER LAS FERIAS</button></a>
+            <a href="productos.php?categoria=ropa_accesorios"><button type="button" name="button">VER PRODUCTOS</button></a>
             </div>
             <div class="imagen">
               <img src="images/inicio.jpg" alt="">
@@ -44,7 +50,8 @@
             <article class="cat">
             <div class="texto">
             <h2>MUEBLES</h2>
-            <button type="button" name="button"><a href="ferias.php?categoria=muebles">VER LAS FERIAS</a></button>
+            <a href="ferias.php?categoria=muebles"><button type="button" name="button">VER LAS FERIAS</button></a>
+          <a href="productos.php?categoria=muebles"><button type="button" name="button">VER PRODUCTOS</button></a>
             </div>
             <div class="imagen">
               <img src="images/muebles.jpg" alt="">
@@ -53,7 +60,8 @@
             <article class="cat">
             <div class="texto">
             <h2>ELECTRO</h2>
-            <button type="button" name="button"><a href="ferias.php?categoria=electro">VER LAS FERIAS</a></button>
+            <a href="ferias.php?categoria=electro"><button type="button" name="button">VER LAS FERIAS</button></a>
+            <a href="productos.php?categoria=electro"><button type="button" name="button">VER PRODUCTOS</button></a>
             </div>
             <div class="imagen">
               <img src="images/electro.jpg" alt="">
@@ -62,7 +70,8 @@
             <article class="cat">
             <div class="texto">
             <h2>CALZADO</h2>
-            <button type="button" name="button"><a href="ferias.php?categoria=calzado">VER LAS FERIAS</a></button>
+            <a href="ferias.php?categoria=calzado"><button type="button" name="button">VER LAS FERIAS</button></a>
+            <a href="productos.php?categoria=calzado"><button type="button" name="button">VER PRODUCTOS</button></a>
             </div>
             <div class="imagen">
               <img src="images/shoes.jpg" alt="">
@@ -71,8 +80,8 @@
             <article class="cat">
             <div class="texto">
             <h2>JUGUETES</h2>
-
-            <button type="button" name="button"><a href="ferias.php?categoria=juguetes">VER LAS FERIAS</a></button>
+            <a href="ferias.php?categoria=juguetes"><button type="button" name="button">VER LAS FERIAS</button></a>
+            <a href="productos.php?categoria=juguetes"><button type="button" name="button">VER PRODUCTOS</button></a>
             </div>
             <div class="imagen">
               <img src="images/juguetes.jpg" alt="">

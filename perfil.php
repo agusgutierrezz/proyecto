@@ -1,4 +1,10 @@
-<!doctype html>
+<?php
+
+require_once("./resources/funciones_usuarios.php");
+
+$usuarioLogueado = traerUsuarioLogueado();
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -15,44 +21,22 @@
   </head>
   <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-heart"></i>
-      </a>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-
+    <?php include("header.php") ?>
   </header>
   <main>
       <img src="images/perfil.jpg" alt="">
     <div class="datos">
-    <h1>Maria Belen</h1>
+    <h1><?php if ($usuarioLogueado != null) : ?>
+      <h2 class="title">Bienvenido <?=$usuarioLogueado["nombre"]?></h2>
+    <?php else: ?>
+    <?php header("location: login.php") ?>
+    <?php endif; ?></h1>
     <h4>mariabelen@gmail.com</h4>
     <h6>Registrada desde 1/04/2018</h6>
     </div>
    <div class="botones">
        <button type="button" name="button">Mis ferias  <i class="fas fa-store"></i></button>
-       <button type="button" name="button">Mi carrito  <i class="fas fa-shopping-cart"></i></button>
+       <button type="button" name="button"><a href="carrito.php?id=<?php ?>">Mi carrito</a>  <i class="fas fa-shopping-cart"></i></button>
     <button type="button" name="button">Editar informacion  <i class="fas fa-user-edit"></i></button>
     <button type="button" name="button">Eliminar mi cuenta  <i class="fas fa-trash-alt"></i>
   </button>

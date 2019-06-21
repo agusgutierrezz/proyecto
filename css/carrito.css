@@ -1,0 +1,9 @@
+.carrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img.imagen_carrito {
+    width: 10%;
+}

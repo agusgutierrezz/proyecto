@@ -12,6 +12,11 @@ footer ul li {
 footer ul {
   padding-inline-start: 0px;
 }
+footer ul li a{
+  color:black !important;
+  text-decoration-style: none;
+
+}
 
 @media (min-width: 940px){
 footer ul li{

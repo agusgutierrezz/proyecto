@@ -13,9 +13,6 @@ nav a.navbar-brand {
   font-size: 30px;
 }
 
-nav button.navbar-toggler {
-  color: #FF6978 !important;
-}
 
 nav a i {
   color: #FF6978;
@@ -63,7 +60,12 @@ div.form label {
 }
 
 span {
-  color: #FF6978;
+
+  font-weight: bold;
+}
+
+.navbar-brand span {
+  color: white !important;
   font-weight: bold;
 }
 

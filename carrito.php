@@ -1,34 +1,14 @@
-<?php
 
-if ($_GET){
-  $value = $_GET["id"];
 
-  function feria($value){
-    $archivo = "./db/ferias.json";
-    //para leer y obtener el contenido del archivo
-    $json_content = file_get_contents($archivo);
-    //para convertir el contenido del archivo en un array
-    $array_content = json_decode($json_content,true);
 
-    $datos_ferias='';
-    foreach ($array_content["ferias"] as $feria) {
-      if ($feria["id"] == $value){
-        $datos_ferias = $feria;
-      }
-    }
-    return $datos_ferias;
-  }
-
-  $datos_ferias =feria($value);
-}
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/feria.css">
+<link rel="stylesheet" href="./css/carrito.css">
+<link rel="stylesheet" href="./css/feria.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Pathway+Gothic+One|Source+Sans+Pro&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
@@ -40,41 +20,9 @@ if ($_GET){
 <header>
 <?php include("header.php") ?>
        </header>
-  <div class="inicio">
-    <div class="mapa">
-      <img src="images/mapa.jpeg" alt="">
-    </div>
-    <div class="info">
-        <h1><?php echo $datos_ferias["nombre"] ?><i class="fas fa-store"></i></h1>
-         <a href="#">Ver perfil de Ana</a>
-        <h2><?php echo $datos_ferias["ubicacion"] ?></h2>
-        <?php echo $datos_ferias["descripcion"] ?>
-         <a href="#">Ver ubicacion</a>
-        <h2>Fecha: 09/09/2019</h2>
-    </div>
-  </div>
-  <div class="botones">
-    <div class="dropdown">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        ORDENAR POR
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        FILTRAR POR
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div>
-  </div>
+       <div class="carrito">
+         <img class="imagen_carrito" src="./images/carrito.png" alt="">
+       </div>
   <hr>
 <div class="productos">
   <div class="card" >
@@ -86,9 +34,8 @@ if ($_GET){
       <h3 class="talle"><b>Talle 39</b></h3>
     </div>
     <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php"> Agregar al carrito! </a></button>
-  <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-  <a class="ver_mas" href="#">Ver más del vendedor</a>
+  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
+  <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
     </div>
   </div>
 </div>
@@ -101,9 +48,8 @@ if ($_GET){
       <h3 class="talle"><b>Talle S</b></h3>
     </div>
     <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-    <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    <a class="ver_mas" href="#">Ver más del vendedor</a>
+      <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
+      <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
     </div>
   </div>
 </div>
@@ -116,9 +62,8 @@ if ($_GET){
       <h3 class="talle"><b>Talle S</b></h3>
     </div>
     <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-  <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-  <a class="ver_mas" href="#">Ver más del vendedor</a>
+      <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
+      <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
     </div>
   </div>
 </div>
@@ -131,9 +76,8 @@ if ($_GET){
       <h3 class="talle"><b>Talle S</b></h3>
     </div>
     <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-    <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    <a class="ver_mas" href="#">Ver más del vendedor</a>
+      <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
+      <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
     </div>
   </div>
 </div>
@@ -146,9 +90,8 @@ if ($_GET){
       <h3 class="talle"><b>Talle S</b></h3>
     </div>
     <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-    <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    <a class="ver_mas" href="#">Ver más del vendedor</a>
+      <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
+      <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
     </div>
   </div>
 </div>
@@ -161,15 +104,14 @@ if ($_GET){
       <h3 class="talle"><b>Talle S</b></h3>
     </div>
     <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-  <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-  <a class="ver_mas" href="#">Ver más del vendedor</a>
+      <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
+      <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
     </div>
   </div>
 </div>
 </div>
 <footer>
-<?php include("footer.php") ?>
+  <?php include("footer.php") ?>
 </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

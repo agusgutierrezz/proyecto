@@ -9,11 +9,11 @@ if ($_GET){
     $json_content = file_get_contents($archivo);
     //para convertir el contenido del archivo en un array
     $array_content = json_decode($json_content,true);
-
+    $datos_ferias =[];
     foreach ($array_content["ferias"] as $feria ) {
-      $datos_ferias =[];
+
       if($feria["categoria"] == $categoria){
-        $datos_ferias[] = $feria;
+        array_push($datos_ferias, $feria) ;
       }
     }
     return $datos_ferias;
@@ -79,12 +79,13 @@ if ($_GET){
             <h5><?php echo $feria["ubicacion"] ?></h5>
             <i class="fas fa-store"></i>
             <img src="images/mapa.jpeg" alt="">
-            <button type="button" name="button"><a href="feria.php?id=<?= $feria["id"]?>" >Ver feria!</a></button>
+          <!---  <img src="./img_user/<?php // echo $feria["avatar"] ?>" alt="">  --->
+            <a href="feria.php?id=<?= $feria["id"]?>" ><button type="button" name="button">Ver feria!</button></a>
+          </div>
+          <div class="descripcion">
+            <?php echo $feria["descripcion"] ?>
           </div>
           <div class="cuerpo-feria">
-            <div class="descripcion">
-              <?php echo $feria["descripcion"] ?>
-            </div>
             <img src="images/sillon.jpg" alt="">
             <img src="images/vajilla.jpg" alt="">
             <img src="images/ropa.jpg" alt="">
