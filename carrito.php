@@ -36,6 +36,7 @@
     <div class="comprar">
   <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
   <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
+  <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -50,6 +51,7 @@
     <div class="comprar">
       <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
       <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
+      <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -64,6 +66,7 @@
     <div class="comprar">
       <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
       <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
+      <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -78,6 +81,7 @@
     <div class="comprar">
       <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
       <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
+      <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -92,6 +96,7 @@
     <div class="comprar">
       <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
       <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
+      <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -106,6 +111,7 @@
     <div class="comprar">
       <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php">COMPRAR</a></button>
       <button type="button" name="button"><i class="fas fa-tag"></i>Quitar del carrito</button>
+      <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>

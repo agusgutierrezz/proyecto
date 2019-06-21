@@ -88,7 +88,6 @@ if ($_GET){
     <div class="comprar">
   <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php"> Agregar al carrito! </a></button>
   <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-  <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -103,7 +102,6 @@ if ($_GET){
     <div class="comprar">
   <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
     <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -118,7 +116,6 @@ if ($_GET){
     <div class="comprar">
   <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
   <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-  <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -133,7 +130,6 @@ if ($_GET){
     <div class="comprar">
   <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
     <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -148,7 +144,6 @@ if ($_GET){
     <div class="comprar">
   <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
     <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
@@ -163,7 +158,6 @@ if ($_GET){
     <div class="comprar">
   <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
   <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-  <a class="ver_mas" href="#">Ver más del vendedor</a>
     </div>
   </div>
 </div>
