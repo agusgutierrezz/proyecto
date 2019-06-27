@@ -17,7 +17,6 @@
       <div class="carrito">
        <div class="inicie">
          <h1>Mis Compras</h1>
-         <button type="button" name="button">Ir a mi perfil</button>
          </div>
              <img class="imagen_carrito" src="./images/carrito.png" alt="">
          </div>

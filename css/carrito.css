@@ -11,7 +11,7 @@ div.inicie{
   margin-left:27%;
 }
 img.imagen_carrito {
-    width: 14%;
+    width: 23%;
     border-radius: 51%;
     margin-right: 20%;
 }
@@ -21,13 +21,16 @@ div.inicie h1{
   padding-top: 4%;
   font-size: 215%;
     color:#3e403f;
-    margin-left: 14%;
+    margin-left: -41%;
+
 }
-div.carrito button{
-  border: 3px solid #FF6978;
-  margin-left:25%;
-  background-color: white;
-  width: 50%;
-  border-radius: 13px 13px;
-  text-decoration: none;
+
+@media (min-width: 940px){
+div.inicie h1{
+margin-left: 14%;
+}
+img.imagen_carrito{
+  width: 15%;
+  margin-right: 27%;
+}
 }
