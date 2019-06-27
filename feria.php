@@ -25,32 +25,26 @@ if ($_GET){
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/feria.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Oswald|Pathway+Gothic+One|Source+Sans+Pro&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur">
-<script src="https://kit.fontawesome.com/14dd9125ec.js"></script>
-<title></title>
+  <?php
+  include("head.php");
+   ?>
+   <link rel="stylesheet" href="./css/feria.css">
 </head>
 <body>
 <header>
 <?php include("header.php") ?>
        </header>
   <div class="inicio">
-    <div class="mapa">
-      <img src="images/mapa.jpeg" alt="">
+    <div class="imagen">
+      <img src="images/inicio.jpg" alt="">
     </div>
     <div class="info">
-        <h1><?php echo $datos_ferias["nombre"] ?><i class="fas fa-store"></i></h1>
-         <a href="#">Ver perfil de Ana</a>
-        <h2><?php echo $datos_ferias["ubicacion"] ?></h2>
-        <?php echo $datos_ferias["descripcion"] ?>
-         <a href="#">Ver ubicacion</a>
-        <h2>Fecha: 09/09/2019</h2>
+      <h1><?php echo $datos_ferias["nombre"] ?></h1>
+          <h4 ><a href="#">Ver perfil de Ana</a></h4>
+        <h2> <i class="fas fa-star-of-life"></i><?php echo $datos_ferias["ubicacion"] ?></h2>
+        <h2> <i class="fas fa-star-of-life"></i><?php echo $datos_ferias["descripcion"] ?></h2>
+        <h4><a href="#">Ver ubicacion</a></h4>
+        <h2> <i class="fas fa-star-of-life"></i>Fecha: 09/09/2019</h2>
     </div>
   </div>
   <div class="botones">

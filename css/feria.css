@@ -45,7 +45,9 @@ div.inicio {
   justify-content: center;
   align-items: center;
 }
-
+div.imagen{
+  display: none;
+}
 div.info h1 {
   font-family: "Playfair Display", sans-serif;
   font-weight: bold;
@@ -56,15 +58,16 @@ div.info h1 {
 div.info h2 {
   font-family: "Inconsolata", sans-serif;
   width: 80%;
-  margin: 3% auto;
-  font-size: 137%;
   font-weight: bold;
-    color: #3e403f;
+  margin: 3% auto;
+  font-size: 127%;
+  color: #3e403f;
 }
 
 div.info i {
-    font-size: 31px;
+    font-size: 15px;
     color: rgba(255, 145, 170, 1);
+    padding-right: 5%;
 }
 
 .ver_mas {
@@ -76,9 +79,9 @@ div.info i {
 div.info a{
 text-decoration: none;
 font-family: "Inconsolata", sans-serif;
-width: 80%;
+width: 65%;
 margin: 0 auto;
-font-size: 100%;
+font-size: 78%;
 color: #3e403f;
 }
 div.botones {
@@ -97,7 +100,7 @@ a#dropdownMenuLink.btn {
 hr {
   border-top: 2px solid #21252966;
   width: 90%;
-  margin: 0 auto;
+  margin: 21px auto;
 }
 div.productos{
   display: flex;
@@ -148,8 +151,10 @@ div.comprar{
   display: block;
 }
 div.comprar button{
-  border: 1px solid  #FF6978;
-  margin-top: 5%;
+border: 3px solid #FF6978;
+margin-top: 5%;
+border-radius: 13px 13px;
+text-decoration: none;
 }
 footer ul li {
   width: 100%;
@@ -164,10 +169,14 @@ footer ul li {
 
 footer ul {
   padding-inline-start: 0px;
+   margin-bottom: 0px;
 }
 
 @media (min-width: 940px){
-
+div.productos{
+  width: 90%;
+margin: 0 auto;
+}
 footer ul li{
   width: 19%;
   float: left;
@@ -180,7 +189,7 @@ footer ul{
   margin: 0 auto;
 }
 div.card{
-  width: 25%;
+  width: 20%;
 }
 div.inicio{
   padding: 0;
@@ -189,7 +198,7 @@ div.info h1{
   font-size: 250%;
 }
 div.info i{
-  font-size: 50px;
+  display: none;
 }
 div.info h2{
   font-size: 100%;
@@ -197,13 +206,13 @@ div.info h2{
 div.info a{
   font-size: 97%;
 }
-div.mapa img{
-  width: 50%;
+div.imagen img{
+  width: 45%;
   border-radius: 51%;
 }
-div.mapa{
-  padding: 0%;
-margin-left: -22%;
+div.imagen{
+display: block;
+margin-left: -15%;
 }
 
 }

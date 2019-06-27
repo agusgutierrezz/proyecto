@@ -20,7 +20,7 @@
              <a href="crear_feria.php"><button id="boton" type="button" name="button">CREA TU FERIA!!!!</button></a>
             <?php endif ?>
             <?php if(!estaLogueado()):?>
-            <a href="login.php"><button id="boton" type="button" name="button">Logueate y crea tu feria!</button></a>
+            <a href="login.php"><button id="boton" type="button" name="button">Crea tu feria!</button></a>
            <?php endif ?>
              <div class="lista">
                <ul>
