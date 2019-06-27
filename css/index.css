@@ -1,9 +1,13 @@
 body {
   font-family: 'Oswald', monospace;
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: .95;
 }
 
 header {
-  margin-top: 1%;
   width: 100%;
 }
 a.nav-link {
@@ -17,7 +21,6 @@ a.navbar-brand{
   font-size: 30px;
 
 }
-
 button.btn.btn-outline-success{
   color:#F0386B;
 border: 1px solid #F0386B;
@@ -30,48 +33,36 @@ nav a i {
   font-size: 25px;
 }
 .descripcion {
-    display: flex;
-    /* float: right; */
-    /* margin-right: 5%; */
-    justify-content: space-around;
-    margin-top: 5%;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 div.inicio {
-  background: rgb(255, 145, 170);
-  background: linear-gradient(90deg, rgba(255, 145, 170, 1) 0%, rgba(255, 190, 159, 1) 43%, rgba(255, 250, 145, 1) 100%);
   width: 90%;
   margin: 21px auto;
-  height: 192px;
   text-align: center;
   position: relative;
 }
-
 div.inicio h1 {
-  font-family: "Inconsolata", sans-serif;
-  font-weight: bold;
-  padding-top: 4%;
-  font-size: 200%;
+font-family: 'Inconsolata', sans-serif;
+font-weight: bold;
+font-size: 205%;
+letter-spacing: 4px;
+color: #3e403f;
 }
-
 div.inicio h2 {
-  font-family: "Inconsolata", sans-serif;
-  width: 80%;
-  margin: 27px auto;
-  font-size: 120%;
+font-family: "Inconsolata", sans-serif;
+width: 80%;
+margin: 0 auto;
+font-size: 94%;
+font-weight: bold;
+padding-bottom: 6%;
+color: #3e403f;
 }
-
-div.inicio i {
-    position: absolute;
-    font-size: 31px;
-    top: 78%;
-    right: 47%;
-    color: white;
-}
-
 hr {
   border-top: 2px solid #21252966;
   width: 90%;
-  margin: 0 auto;
+  margin: 25px auto;
 }
 
 div.feria {
@@ -84,8 +75,7 @@ div.feria {
 }
 
 div.header-feria {
-  background: rgb(255, 250, 145);
-  background: linear-gradient(90deg, rgba(255, 250, 145, 1) 0%, rgba(255, 170, 145, 1) 100%);
+  background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
   width: 100%;
   text-align: center;
   position: relative;
@@ -101,31 +91,27 @@ div.header-feria i {
   top: 22%;
 }
 
-div.header-feria button {
-  position: absolute;
-  border: 3px solid #FF6978;
-  font-family: "Oswald", sans-serif;
-  font-weight: bold;
-  background-color: white;
-  color: black;
-  font-size: 22px;
-  letter-spacing: 2px;
-  padding: 0%;
-  left: 42%;
+div.boton-header button {
+  display: none;
 }
 
 div.header-feria h3 {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
   padding-top: 4%;
+  color: #3e403f;
 }
-
+div.header-feria h5{
+  width: 40%;
+margin: 0 auto;
+color: #3e403f;
+}
 div.header-feria img {
-  width: 24%;
+  width: 33%;
   border-radius: 51%;
   position: absolute;
-  left: 10%;
-  top: 6%;
+  left: -2%;
+  top: 42%;
 }
 
 div.cuerpo-feria {
@@ -137,13 +123,17 @@ div.cuerpo-feria {
 div.botones {
   display: flex;
   justify-content: space-around;
+margin-top: -5%;
 }
 
 a#dropdownMenuLink.btn {
-  background-color: white;
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   padding: 8%;
-  color: black;
-  border: 2px solid black;
+  color: #3e403f;
+  border: 2px solid #3e403f;
   font-family: "Inconsolata", sans-serif;
   font-weight: bold;
 }
@@ -152,6 +142,7 @@ div.cuerpo-feria img {
   height: 140px;
   padding-bottom: 1%;
   border-radius: 13px 13px 13px 13px;
+  width: 45%;
 }
 
 footer ul li {
@@ -160,11 +151,46 @@ footer ul li {
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
-  background-color: #FF6978;
-  color: black;
+  background-color: #FFD0D9;
+  color: #3e403f;
   margin: 1% auto;
 }
 
 footer ul {
   padding-inline-start: 0px;
+  margin-bottom: 0px;
+}
+@media (min-width: 940px){
+div.feria{
+  width: 30%;
+}
+div.header-feria h3,h5{
+  padding: 3%;
+}
+div.header-feria h5{
+  height: 112px;
+}
+main{
+  display: flex;
+  justify-content: space-around;
+}
+div.header-feria img {
+    left: 1%;
+    top: 47%;
+}
+div.boton-header button {
+  display: block;
+  text-align: center;
+  margin:0 auto;
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 2%;
+  color: #3e403f;
+  border: 2px solid #3e403f;
+  font-family: "Inconsolata", sans-serif;
+  font-weight: bold;
+}
+
 }
