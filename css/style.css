@@ -1,23 +1,28 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
-
-nav a.navbar-brand {
+a.nav-link {
   color: white !important;
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 20px
+}
+a.navbar-brand{
   font-weight: bold;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   font-size: 30px;
-}
 
-nav button.navbar-toggler {
-  color: #FF6978 !important;
 }
-
 nav a i {
-  color: #FF6978;
-  font-size: 45px;
+  color:#FFD0D9 ;
+  font-size: 25px;
 }
 
+button.btn.btn-outline-success{
+  color:#F0386B;
+border: 1px solid #F0386B;
+background-color: white;
+font-weight: bold;
+}
 h1 {
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
@@ -40,11 +45,13 @@ div.head {
   color: white;
   position: absolute;
   left: 26%;
-  top: 71%;
+  top: 55%;
   padding: 1%;
-  width: 25%;
+  width: 32%;
+  font-family: 'Oswald', sans-serif;
 
 }
+
 
 hr {
   margin-bottom: 1rem;
@@ -119,13 +126,14 @@ article.cat {
 }
 
 div.texto button {
-  background-color: black;
-    color: white;
+  background-color: white;
+    color: black;
+    border: 2px solid #FFD0D9;
     font-size: 12px;
     border-radius: 13px 13px;
     letter-spacing: 2px;
     padding: 6%;
-    margin-top: 21%;
+    margin-top: 8%;
     margin-left: 17%;
 }
 
@@ -148,10 +156,7 @@ div.imagen img{
   width: 100%;
 }
 @media (min-width: 940px){
-body{
-  width: 90%;
-  margin: 0 auto;
-}
+
   div.leyenda h2 {
       font-size: 200%;
   }
@@ -166,7 +171,8 @@ div.leyenda{
 }
 
 #boton{
-  top:60%;
+  top: 64%;
+width: 18%;
 }
 div.lista ul li {
 font-size: 120%;
@@ -190,5 +196,8 @@ article.cat{
 }
 footer ul li{
   width: 12%;
+}
+button.btn.btn-outline-success{
+
 }
 }

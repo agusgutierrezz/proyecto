@@ -9,20 +9,20 @@ header {
   width: 100%;
 }
 
-nav a.navbar-brand {
+a.nav-link {
   color: white !important;
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 20px
+}
+a.navbar-brand{
   font-weight: bold;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   font-size: 30px;
-}
 
-nav button.navbar-toggler {
-  color: #FF6978 !important;
 }
-
 nav a i {
-  color: #FF6978;
-  font-size: 45px;
+  color:#FFD0D9 ;
+  font-size: 25px;
 }
 div.inicio {
   box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);

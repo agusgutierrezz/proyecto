@@ -3,29 +3,34 @@ body {
 }
 
 header {
-  margin-top: 1%;
   width: 100%;
 }
 
-nav a.navbar-brand {
+a.nav-link {
   color: white !important;
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 20px
+}
+a.navbar-brand{
   font-weight: bold;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   font-size: 30px;
 }
-
-nav button.navbar-toggler {
-  color: #FF6978 !important;
-}
-
 nav a i {
-  color: #FF6978;
-  font-size: 45px;
+  color:#FFD0D9 ;
+  font-size: 25px;
 }
 
+button.btn.btn-outline-success{
+  color:#F0386B;
+border: 1px solid #F0386B;
+background-color: white;
+font-weight: bold;
+}
 div.inicio {
-  background: rgb(255, 145, 170);
-  background: linear-gradient(90deg, rgba(255, 145, 170, 1) 0%, rgba(255, 190, 159, 1) 43%, rgba(255, 250, 145, 1) 100%);
+  box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+  padding: 2%;
+  background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
   width: 90%;
   margin: 21px auto;
   height: 192px;
@@ -37,7 +42,9 @@ div.inicio h1 {
   font-family: "Inconsolata", sans-serif;
   font-weight: bold;
   padding-top: 4%;
-  font-size: 200%;
+  font-size: 300%;
+  letter-spacing: 1px;
+  color:#3e403f;
 }
 
 div.inicio h2 {
@@ -53,6 +60,7 @@ div.inicio i {
     top: 78%;
     right: 47%;
     color: white;
+    display: none;
 }
 
 hr {
@@ -154,4 +162,17 @@ footer ul li {
 
 footer ul {
   padding-inline-start: 0px;
+}
+@media (min-width: 940px){
+div.inicio{
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 75%;
+  box-shadow: 0;
+}
+div.botones{
+  padding-bottom: 3%;
+}
 }

@@ -13,26 +13,25 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#">
-        <i class="fas fa-heart"></i>
+        Feriate.com  <i class="fas fa-store"></i>
       </a>
-      <a class="navbar-brand" href="login.php">INGRESAR</a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
+      <a class="nav-link" href="login.php">INGRESAR</a>
+     <li>
+       <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+     </li>
+  </ul>
+
 
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+          <form  action="cerrar.php" method="post">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="sesion">Cerrar Sesion</button>
+         </form>
+          <a href="perfil.php"> <button class="btn btn-outline-success my-2 my-sm-0" >Mi Perfil</button></a>
       </div>
     </nav>
   </header>
@@ -44,7 +43,6 @@
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       ¿Como hago para vender?
-
   </button>
   <div class="dropdown-menu p-4 text-muted" style="max-width: 780px;">
   <p>
