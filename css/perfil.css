@@ -1,17 +1,25 @@
-nav a.navbar-brand {
+a.nav-link {
   color: white !important;
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 20px
+}
+a.navbar-brand{
   font-weight: bold;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   font-size: 30px;
+
 }
 
-nav button.navbar-toggler {
-  color: #FF6978 !important;
+button.btn.btn-outline-success{
+  color:#F0386B;
+border: 1px solid #F0386B;
+background-color: white;
+font-weight: bold;
 }
 
 nav a i {
-  color: #FF6978;
-  font-size: 45px;
+  color:#FFD0D9 ;
+  font-size: 25px;
 }
 body{
   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
