@@ -11,6 +11,7 @@ footer ul li {
 
 footer ul {
   padding-inline-start: 0px;
+  margin-bottom: 0px;
 }
 footer ul li a{
   color:black !important;
