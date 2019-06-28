@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 a.nav-link {
   color: white !important;
   font-family: 'Inconsolata', sans-serif;
@@ -28,18 +31,57 @@ body{
   background-repeat: no-repeat;
   opacity: .95;
 }
-img{
-width: 80%;
-margin: 0 auto;
-display: block;
+
+div.img img{
+  width: 20%;
+}
+div.img{
+
 }
 div.datos{
   text-align: center;
   font-family: 'Inconsolata', sans-serif;
   font-weight: bold;
+  width: 100%;
 }
-div.botones button{
-  width: 80%;
+h2{
+  margin-top: -3%;
+  font-weight: bold;
+  font-family: "Playfair display",sans-serif;
+  padding: 1%;
+}
+i{
+  color:#FF6978;
+}
+div.comprar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+margin:4%;
+  justify-content: space-around;
+  box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+  padding: 2%;
+  background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+}
+h1{
+  font-family: "Playfair Display";
+  text-align: center;
+  margin-top: 4%;
+}
+button{
+  background-color: white;
+  font-family: "Oswald", monospace;
+  padding: 1%;
+}
+div.info{
+  display: flex;
+  justify-content: center;
+flex-direction: column;
+margin: 2% auto;
+
+}
+ div.secciones button{
+  width: 100%;
 padding: 3%;
 font-size: 159%;
 background-color: white;
@@ -47,26 +89,36 @@ font-family: "Oswald", monospace;
 margin: 0 auto;
 display: block;
 }
-div.botones i {
-  color: #FF6978;
-}
-@media (min-width: 940px){
-main{
-  width: 70%;
-  margin: 0 auto;
-
-}
-img{
-  width: 30%;
-  margin: 2% auto;
-}
-div.botones{
+div.secciones{
   display: flex;
-  justify-content:center;
-  margin: 0 auto;
-
+  justify-content: space-around;
 }
-div.botones button{
-margin-top: 5%;
+
+@media only screen and (min-device-width : 375px)
+and (max-device-width : 667px) {
+div.info{
+  display: block;
+}
+div.img{
+  display: none;
+}
+div.datos{
+  margin: 0 auto;
+  width: 100%;
+}
+h2{
+  padding: 0%;
+}
+div.secciones{
+  display: block;
+}
+div.comprar{
+  width: 90%;
+}
+h1{
+  font-size: 162%;
+}
+div.secciones button{
+  font-size: 100%;
 }
 }
