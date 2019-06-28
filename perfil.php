@@ -24,26 +24,41 @@ $usuarioLogueado = traerUsuarioLogueado();
     <?php include("header.php") ?>
   </header>
   <main>
-      <img src="images/perfil.jpg" alt="">
+    <div class="info">
     <div class="datos">
+      <div class="img">
+      <img src="images/perfil.jpg" alt="" class="img-thumbnail">
+      </div>
     <h1><?php if ($usuarioLogueado != null) : ?>
-      <h2 class="title">Bienvenido <?=$usuarioLogueado["nombre"]?></h2>
+      <h2 class="title">Bienvenida <?=$usuarioLogueado["nombre"]?></h2>
     <?php else: ?>
     <?php header("location: login.php") ?>
     <?php endif; ?></h1>
     <h4>mariabelen@gmail.com</h4>
     <h6>Registrada desde 1/04/2018</h6>
-    </div>
-   <div class="botones">
-       <button type="button" name="button">Mis ferias  <i class="fas fa-store"></i></button>
-       <button type="button" name="button"><a href="carrito.php?id=<?php ?>">Mi carrito</a>  <i class="fas fa-shopping-cart"></i></button>
     <button type="button" name="button">Editar informacion  <i class="fas fa-user-edit"></i></button>
-    <button type="button" name="button">Eliminar mi cuenta  <i class="fas fa-trash-alt"></i>
-  </button>
+    </div>
+    </div>
+   <div class="secciones">
+<div class="comprar">
+        <h1>Gestiona tus ferias..</h1>
+
+         <button type="button" name="button">Editar ferias <i class="fas fa-store"></i></button>
+         <button type="button" name="button">Crea una feria! <i class="fas fa-store"></i></button>
+     </div>
+          <div class="comprar">
+          <h1>.. o tus compras</h1>
+      <button type="button" name="button"><a href="carrito.php?id=<?php ?>">Mi carrito</a>  <i class="fas fa-shopping-cart"></i></button>
+      <button type="button" name="button"><a href="carrito.php?id=<?php ?>">Ver mis medios de pago</a>  <i class="fas fa-shopping-cart"></i></button>
+     </div>
+
+
     </div>
 
   </main>
-
+  <footer>
+  <?php include("footer.php") ?>
+  </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
