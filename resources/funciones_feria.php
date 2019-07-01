@@ -1,4 +1,5 @@
 <?php
+require_once("./resources/funciones_usuarios.php");
 
 function guardar_feria($nombre, $ubicacion, $descripcion, $categoria, $id, $pic_name, $ext){
   $archivo = "./db/ferias.json";
@@ -8,7 +9,8 @@ function guardar_feria($nombre, $ubicacion, $descripcion, $categoria, $id, $pic_
       "descripcion" => $descripcion,
       "id" => $id,
       "avatar" => $pic_name,
-      "categoria" => $categoria
+      "categoria" => $categoria,
+      "id_usuario" => traerUsuarioLogueado()["id"]
     ];
 
   //para leer y obtener el contenido del archivo
@@ -22,6 +24,22 @@ function guardar_feria($nombre, $ubicacion, $descripcion, $categoria, $id, $pic_
   //p guardar/ESCRIBIR usuarios en el archivo "usuarios.json"
   file_put_contents($archivo, $usuarios_json);
 
+}
+
+function feria($value){
+  $archivo = "./db/ferias.json";
+  //para leer y obtener el contenido del archivo
+  $json_content = file_get_contents($archivo);
+  //para convertir el contenido del archivo en un array
+  $array_content = json_decode($json_content,true);
+
+  $datos_ferias='';
+  foreach ($array_content["ferias"] as $feria) {
+    if ($feria["id"] == $value){
+      $datos_ferias = $feria;
+    }
+  }
+  return $datos_ferias;
 }
 
 

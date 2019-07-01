@@ -3,23 +3,15 @@
 if ($_GET){
   $value = $_GET["id"];
 
-  function feria($value){
-    $archivo = "./db/ferias.json";
-    //para leer y obtener el contenido del archivo
-    $json_content = file_get_contents($archivo);
-    //para convertir el contenido del archivo en un array
-    $array_content = json_decode($json_content,true);
-
-    $datos_ferias='';
-    foreach ($array_content["ferias"] as $feria) {
-      if ($feria["id"] == $value){
-        $datos_ferias = $feria;
-      }
-    }
-    return $datos_ferias;
-  }
+ require_once("./resources/funciones_feria.php");
 
   $datos_ferias =feria($value);
+
+  require_once("./resources/funciones_productos.php");
+
+    $datos_productos =productos_feria($value);
+
+    require_once("./resources/funciones_usuarios.php");
 }
 ?>
 <!DOCTYPE html>
@@ -45,6 +37,11 @@ if ($_GET){
         <h2> <i class="fas fa-star-of-life"></i><?php echo $datos_ferias["descripcion"] ?></h2>
         <h4><a href="#">Ver ubicacion</a></h4>
         <h2> <i class="fas fa-star-of-life"></i>Fecha: 09/09/2019</h2>
+        <?php if(estaLogueado()):?>
+         <?php if(esDuenoDeFeria($value)):?>
+           <a href="crear_producto.php?feria=<?php echo $datos_ferias["id"] ?>"><button id="boton" type="button" name="button">Cargar Productos</button></a
+         <?php endif ?>
+      <?php endif ?>
     </div>
   </div>
   <div class="botones">
@@ -70,90 +67,36 @@ if ($_GET){
     </div>
   </div>
   <hr>
-<div class="productos">
-  <div class="card" >
-  <img src="images/shoes.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Zapatos Prune sin uso</p>
-    <div class="descripcion">
-      <h3 class="precio"><b>$950</b></h3>
-      <h3 class="talle"><b>Talle 39</b></h3>
-    </div>
-    <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php"> Agregar al carrito! </a></button>
-  <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    </div>
-  </div>
+    <?php if(empty($datos_productos)) :?>
+     <p style="color:red">Lo Sentimos No Hay Productos para la Categoria seleccionada</p>
+  <?php endif ;?>
+  <main>
+    <div class="producto">
+  <?php if(!empty($datos_productos)) :?>
+      <?php foreach ($datos_productos as $producto) :?>
+          <div class="card" >
+          <img src="images/shoes.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"><?php echo $producto['nombre'] ?></p>
+            <div class="descripcion">
+              <h3 class="precio"><b>Precio: <?php echo $producto['precio'] ?></b></h3>
+              <h3 class="talle"><b>Talle 39</b></h3>
+              <h3 class="cantidad"><b>cantidad: <?php echo $producto['cantidad'] ?></b></h3>
+            </div>
+            <div class="comprar">
+            <?php if(estaLogueado()):?>
+              <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php"> Agregar al carrito! </a></button>
+              <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
+            <?php endif ?>
+            <?php if(!estaLogueado()):?>
+                 <a href="login.php" ><button type="button" name="button"><i class="fas fa-tag"></i>logueate para comprar</button>
+           <?php endif ?>
+            </div>
+          </div>
+        </div>
+<?php endforeach ?>
 </div>
-  <div class="card" >
-  <img src="images/shoes.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Reloj nuevo sin uso</p>
-    <div class="descripcion">
-      <h3 class="precio"><b>$950</b></h3>
-      <h3 class="talle"><b>Talle S</b></h3>
-    </div>
-    <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-    <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    </div>
-  </div>
-</div>
-  <div class="card" >
-  <img src="images/shoes.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Reloj nuevo sin uso</p>
-    <div class="descripcion">
-      <h3 class="precio"><b>$950</b></h3>
-      <h3 class="talle"><b>Talle S</b></h3>
-    </div>
-    <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-  <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    </div>
-  </div>
-</div>
-  <div class="card" >
-  <img src="images/shoes.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Reloj nuevo sin uso</p>
-    <div class="descripcion">
-      <h3 class="precio"><b>$950</b></h3>
-      <h3 class="talle"><b>Talle S</b></h3>
-    </div>
-    <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-    <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    </div>
-  </div>
-</div>
-  <div class="card" >
-  <img src="images/reloj.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Reloj nuevo sin uso</p>
-    <div class="descripcion">
-      <h3 class="precio"><b>$950</b></h3>
-      <h3 class="talle"><b>Talle S</b></h3>
-    </div>
-    <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-    <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    </div>
-  </div>
-</div>
-  <div class="card" >
-  <img src="images/reloj.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Reloj nuevo sin uso</p>
-    <div class="descripcion">
-      <h3 class="precio"><b>$950</b></h3>
-      <h3 class="talle"><b>Talle S</b></h3>
-    </div>
-    <div class="comprar">
-  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button>
-  <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
-    </div>
-  </div>
+<?php endif; ?>
 </div>
 </div>
 <footer>
