@@ -40,7 +40,7 @@ if ($_POST) {
         </div>
         <div class="form-group col-md-6">
           <label for="emak"> Email <span>*</span></label>
-          <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+          <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
         </div>
         <div class="form-group col-md-6">
           <label for="pass">Contraseña <span>*</span></label>
@@ -51,11 +51,11 @@ if ($_POST) {
           <input type="password" class="form-control" id="pass_confirm" placeholder="Password" name="pass_confirm" required >
         </div>
       </div>
-      <div class="">
+      <div>
         <input type="checkbox">
         <label for="">Quiero recibir novedades via email de Feriate.com
       </div>
-      <div class="">
+      <div>
         <input type="checkbox">
         <label for="">Acepto <a href="/terminos_condiciones.php">Terminos y Condiciones</a></label>
       </div>

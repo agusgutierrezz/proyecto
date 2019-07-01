@@ -63,8 +63,14 @@ if ($_GET){
             <?php echo $feria["descripcion"] ?>
           </div>
           <div class="cuerpo-feria">
-            <img src="images/sillon.jpg" alt="">
-            <img src="images/vajilla.jpg" alt="">
+            <?php if(!empty($feria["avatar"])) :?>
+              <img src="img_user/<?php echo $feria["avatar"] ?>" alt="">
+              <img src="img_user/<?php echo $feria["avatar"] ?>" alt="">
+             <?php endif; ?>
+            <?php if(empty($feria["avatar"])) :?>
+               <img src="images/logo_feriate_deffault.png" alt="">
+               <img src="images/logo_feriate_deffault_ii.png" alt="">
+            <?php endif; ?>
           </div>
         </div>
         <?php endforeach ?>

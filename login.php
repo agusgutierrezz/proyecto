@@ -43,7 +43,7 @@ if ($_POST) {
       <p style="color:red; font-size:12px;"><?=$error?></a></p>
       <?php endif; ?>
       <div class="field-set">
-        <input class="form-input" id="txt-input" type="text" placeholder="Email" name="email" required>
+        <input class="form-input" id="txt-input" type="email" placeholder="Email" name="email" required>
         <br>
         <input class="form-input" type="password" placeholder="Contraseña" id="pwd" name="pass" required>
         <br>
