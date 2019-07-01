@@ -26,7 +26,12 @@ $usuarioLogueado = traerUsuarioLogueado();
   <main>
     <div class="info">
           <div class="img">
-            <img src="images/perfil.jpg" alt="" class="img-thumbnail">
+            <?php if ($usuarioLogueado != null) : ?>
+            <img src="img_user/<?=$usuarioLogueado["avatar"]?>" alt="" class="img-thumbnail">
+            <?php endif; ?>
+            <?php if ($usuarioLogueado["avatar"] == null) : ?>
+            <img src=".\img_user\usuaria.jpg" alt="" class="img-thumbnail">
+            <?php endif; ?>
 </div>
     <div class="datos">
     <h1><?php if ($usuarioLogueado != null) : ?>
@@ -34,7 +39,9 @@ $usuarioLogueado = traerUsuarioLogueado();
     <?php else: ?>
     <?php header("location: login.php") ?>
     <?php endif; ?></h1>
-    <h4>mariabelen@gmail.com</h4>
+    <?php if ($usuarioLogueado != null) : ?>
+    <h4><?=$usuarioLogueado["email"]?></h4>
+    <?php endif; ?>
     <h6>Registrada desde 1/04/2018</h6>
     <button type="button" name="button">Editar informacion  <i class="fas fa-user-edit"></i></button>
     </div>
