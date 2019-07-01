@@ -59,7 +59,7 @@ if ($_POST) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/feria.css">
+<link rel="stylesheet" href="css/crear_feria.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Pathway+Gothic+One|Source+Sans+Pro&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
@@ -76,8 +76,8 @@ if ($_POST) {
    ?>
 </header>
   <body>
-  <div class="form">
-    <h1>Crea tu feria</h1>
+      <h1>Crea tu feria</h1>
+    <div class="inicio">
     <form method="post" action="crear_feria.php" enctype="multipart/form-data">
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -96,15 +96,8 @@ if ($_POST) {
           <label for="foto_feria">Subi una Foto de tu feria:</label>
           <input type="file" name="foto_feria">
         </div>
-        <label for="categoria"> categoria <span>*</span></label>
-        <input list="categoria" name="categoria" placeholder="categoria" autocomplete="off" >
-        <datalist id="categoria">
-          <option value="juguetes">
-          <option value="muebles">
-          <option value="calzado">
-          <option value="electro">
-          <option value="ROPA Y ACCESORIOS">
-        </datalist>
+        <label for="categoria"> Horario <span>*</span></label>
+        <input list="horario" name="horario" placeholder="horario" autocomplete="off" >
       <button type="submit" class="btn btn-primary">FERIATE!!!</button>
     </form>
     <ul>
@@ -112,6 +105,7 @@ if ($_POST) {
         <li style="color:red"><?=$error?></a></li>
       <?php endforeach; ?>
     </ul>
+    </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
