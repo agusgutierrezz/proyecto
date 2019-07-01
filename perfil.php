@@ -25,10 +25,12 @@ $usuarioLogueado = traerUsuarioLogueado();
   </header>
   <main>
     <div class="info">
+          <div class="img">
+            <img src="images/perfil.jpg" alt="" class="img-thumbnail">
+</div>
     <div class="datos">
-      <div class="img">
-      <img src="images/perfil.jpg" alt="" class="img-thumbnail">
-      </div>
+
+
     <h1><?php if ($usuarioLogueado != null) : ?>
       <h2 class="title">Bienvenida <?=$usuarioLogueado["nombre"]?></h2>
     <?php else: ?>
