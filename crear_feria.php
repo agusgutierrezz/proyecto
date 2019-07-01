@@ -65,10 +65,7 @@ if ($_POST) {
 <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur">
 <script src="https://kit.fontawesome.com/14dd9125ec.js"></script>
-<title></title>
-</head>
-   <link rel="stylesheet" href="css/registro.css">
-   <title>Crea_tu_feria</title>
+<title>Crea tu feria</title>
 </head>
 <header>
   <?php
@@ -89,16 +86,23 @@ if ($_POST) {
           <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion" name="ubicacion">
         </div>
         <div class="form-group col-md-6">
-          <label for="descripcio"> Descripcion <span>*</span></label>
+          <label for="descripcion"> Descripcion <span>*</span></label>
           <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion">
         </div>
         <div class="form-group col-md-6">
-          <label for="foto_feria">Subi una Foto de tu feria:</label>
-          <input type="file" name="foto_feria">
+          <label for="categoria"> Horario <span>*</span></label>
+          <input list="horario"  class="form-control" name="horario" placeholder="horario" autocomplete="off" >
         </div>
-        <label for="categoria"> Horario <span>*</span></label>
-        <input list="horario" name="horario" placeholder="horario" autocomplete="off" >
-      <button type="submit" class="btn btn-primary">FERIATE!!!</button>
+        <div class="foto">
+          <div class="form-group col-md-6">
+            <label for="foto_feria">Subi una Foto de tu feria:</label>
+            <div class="display">
+            </div>
+            <input type="file"id="upload" name="foto_feria">
+          </div>
+            <button type="submit" id="subir"class="btn btn-primary">Subi tus productos!</button>
+        </div>
+      <button type="submit"id="crear" class="btn btn-primary">Feriate!</button>
     </form>
     <ul>
       <?php foreach ($errores as $error) :?>

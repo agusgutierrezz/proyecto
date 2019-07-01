@@ -34,15 +34,16 @@ width: 90%;
 margin: 0 auto;
 font-family: "inconsolata", sans-serif;
 font-size: 110%;
-border: 2px solid #FF6978;
 padding: 4%;
 color: #3e403f;
+text-align: center;
 }
 span{
   color: #FF6978;
 }
 div.inicio input{
-  width: 55%;
+  width: 100%;
+  margin: 0 auto;
 }
 div.inicio select, input{
   border: 1px solid  black;
@@ -51,17 +52,17 @@ option{
 font-family: "inconsolata", sans-serif;
 color: #3e403f;
 }
+label{
+  font-weight: bold;
+}
 div.display {
   width: 70%;
   height: 190px;
   border: 1px solid black;
-  margin: 3%;
-}
-div.boton{
-  font-family: "inconsolata", sans-serif;
+  margin: 0 auto;
 }
 input#upload{
-  width: 42%;
+  width: 37%;
   margin: 2%;
 }
 div.upload_img{
@@ -70,17 +71,13 @@ div.upload_img{
   border: 2px solid #FF6978;
   padding: 2%;
 }
-div.foto{
-  width: 80%;
-  margin: 0 auto;
-}
 h1{
   font-family: "Playfair Display",monospace;
   text-align: center;
   font-size: 140%;
-  margin:3%;
   color: #3e403f;
   font-weight: bold;
+  margin-top: 3%!important;
 }
 h3{
   font-family: "inconsolata",sans-serif;
@@ -90,22 +87,35 @@ h3{
   margin-left: 5%;
   color: #3e403f;
 }
-div.descripcion{
-width: 90%;
-margin-bottom: 7%;
-margin-left: 5%;
-font-family: "inconsolata", sans-serif;
-font-size: 110%;
-border: 2px solid #FF6978;
-padding: 4%;
+button#subir{
+  width: 80%;
+  margin: 0 auto;
+  font-family: "inconsolata",sans-serif;
+  font-size: 120%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 20px,
+    rgba(0, 0, 0, 0) 40px,
+    #E3FDF5 40px,
+    #E3FDF5 60px
+  );
+    color: #3e403f;
+  border: 1px solid #FF6978;
 }
-div.descripcion input,textarea{
-  width: 55%;
-  border: 1px solid black;
+button#crear{
+  width: 100%;
+  font-family: "inconsolata",sans-serif;
+  font-size: 120%;
+  margin: 2%;
+    color: #3e403f;
+  border: 1px solid #FF6978;
+  background-color: white;
+  font-weight: bold;
 }
 footer ul {
   margin-bottom: 0px;
 }
+
 @media (min-width: 940px){
 h1{
   margin-top: 3%;
@@ -117,22 +127,25 @@ div.inicio{
   align-items: center;
 }
 div.inicio input{
-  width: 50%;
+  width: 100%;
 }
-
-div.upload_img{
-  width: 60%;
-  display: flex;
+div.display{
+  margin: 0 auto;
 }
-div.foto{
-  width: 50%;
-}
-
 input#upload{
   width: 40%;
 }
-div.descripcion{
-  width: 60%;
+div.foto{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  align-items: center;
   margin: 0 auto;
+}
+button#subir{
+  width: 39%;
+  height: 31%;
+  font-weight: bold;
 }
 }

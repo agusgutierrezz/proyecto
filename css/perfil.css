@@ -109,7 +109,9 @@ margin: 0 auto;
 and (max-device-width : 667px) {
 div.info{
   display: block;
+ width: 73%;
 }
+
 div.img{
   display: none;
 }
@@ -131,5 +133,9 @@ h1{
 }
 div.secciones button{
   font-size: 100%;
+}
+footer ul{
+  padding bottom: 0px;
+  margin-bottom: 0px;
 }
 }
