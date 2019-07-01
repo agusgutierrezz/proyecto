@@ -108,6 +108,9 @@ div.productos{
   justify-content: space-around;
   align-items: center;
 }
+div.producto{
+  overflow: hidden;
+}
 div.productos button{
   background-color: white;
   padding: 2%;
@@ -126,6 +129,7 @@ div.card{
   padding-bottom: 2%;
   width: 46%;
   margin: 2%;
+  float: left;
 }
 div.card img{
   height: 30vh;
@@ -190,6 +194,7 @@ footer ul{
 }
 div.card{
   width: 20%;
+  float: left;
 }
 div.inicio{
   padding: 0;

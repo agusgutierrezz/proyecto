@@ -46,7 +46,7 @@ if ($_POST) {
     move_uploaded_file( $archivo , $miarchivo);
 
     guardar_feria($nombre, $ubicacion, $descripcion, $categoria, $id, $pic_name, $ext);
-    header("location: ferias.php?categoria=$categoria");
+    header("location: feria.php?id=$id");
 
 
   }

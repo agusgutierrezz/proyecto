@@ -29,7 +29,7 @@
                  <li><i class="fas fa-star-of-life"></i><span> Publica</span> lo que no usas</li>
                  <li><i class="fas fa-star-of-life"></i><span> Gestiona</span> las reservas</li>
                  <li><i class="fas fa-star-of-life"></i><span> Ahorra</span> tiempo</li>
-                 <button type="button" name="button">MAS INFO!</button>
+                 <a href="preguntas.php"><button type="button" name="button">MAS INFO!</button></a>
                </ul>
              </div>
              </div>

@@ -163,7 +163,11 @@ function traerUsuarioLogueado() {
   return null;
 }
 
-
+function esDuenodeFeria($id_feria){
+    if (feria($id_feria)["usuario_id"] == traerUsuarioLogueado()["id"]){
+      return true;
+    }
+}
 
 
  ?>

@@ -44,7 +44,7 @@ $usuarioLogueado = traerUsuarioLogueado();
         <h1>Gestiona tus ferias..</h1>
 
          <button type="button" name="button">Editar ferias <i class="fas fa-store"></i></button>
-         <button type="button" name="button">Crea una feria! <i class="fas fa-store"></i></button>
+         <a href="crear_feria.php"><button type="button" name="button">Crea una feria! <i class="fas fa-store"></i></button></a>
      </div>
           <div class="comprar">
           <h1>.. o tus compras</h1>
