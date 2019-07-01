@@ -29,8 +29,6 @@ $usuarioLogueado = traerUsuarioLogueado();
             <img src="images/perfil.jpg" alt="" class="img-thumbnail">
 </div>
     <div class="datos">
-
-
     <h1><?php if ($usuarioLogueado != null) : ?>
       <h2 class="title">Bienvenida <?=$usuarioLogueado["nombre"]?></h2>
     <?php else: ?>
