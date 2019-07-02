@@ -10,7 +10,6 @@ if ($_POST) {
   $nombre = $_POST["nombre"];
   $ubicacion = $_POST["ubicacion"];
   $descripcion = $_POST["descripcion"];
-  $categoria = $_POST["categoria"];
   $avatar = $_FILES["foto_feria"];
   $archivo = $_FILES["foto_feria"]["tmp_name"];
   $pic_name = $_FILES["foto_feria"]["name"];
@@ -45,7 +44,7 @@ if ($_POST) {
     $miarchivo = $miarchivo. $pic_name;
     move_uploaded_file( $archivo , $miarchivo);
 
-    guardar_feria($nombre, $ubicacion, $descripcion, $categoria, $id, $pic_name, $ext);
+    guardar_feria($nombre, $ubicacion, $descripcion, $id, $pic_name, $ext);
     header("location: feria.php?id=$id");
 
 
@@ -98,9 +97,9 @@ if ($_POST) {
             <label for="foto_feria">Subi una Foto de tu feria:</label>
             <div class="display">
             </div>
-            <input type="file"id="upload" name="foto_feria">
+            <input type="file" id="upload" name="foto_feria">
           </div>
-            <button type="submit" id="subir"class="btn btn-primary">Subi tus productos!</button>
+          <a href="crear_producto.php" id="subir" class="btn btn-primary">Subi tus productos!</a>
         </div>
       <button type="submit"id="crear" class="btn btn-primary">Feriate!</button>
     </form>

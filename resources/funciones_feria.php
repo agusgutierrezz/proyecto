@@ -1,7 +1,7 @@
 <?php
 require_once("./resources/funciones_usuarios.php");
 
-function guardar_feria($nombre, $ubicacion, $descripcion, $categoria, $id, $pic_name, $ext){
+function guardar_feria($nombre, $ubicacion, $descripcion, $id, $pic_name, $ext){
   $archivo = "./db/ferias.json";
   $feria = [
       "nombre" => $nombre,
@@ -9,7 +9,6 @@ function guardar_feria($nombre, $ubicacion, $descripcion, $categoria, $id, $pic_
       "descripcion" => $descripcion,
       "id" => $id,
       "avatar" => $pic_name,
-      "categoria" => $categoria,
       "id_usuario" => traerUsuarioLogueado()["id"]
     ];
 
