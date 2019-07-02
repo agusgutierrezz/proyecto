@@ -27,11 +27,11 @@
        </header>
        <br>
        <div class="field-set">
-         <input class="form-input" id="txt-input" type="text" placeholder="Email" required>
+         <input class="form-input" id="txt-input" type="email" placeholder="Email" required>
           <br>
         <textarea name="name" rows="8" cols="80" placeholder="Tu comentario"></textarea>
           <br>
-          <button class="log-in">Enviar! </button>
+          <button class="log-in">Enviar!</button>
        </div>
        <div class="other">
         <p>...o buscanos en nuestras redes sociales!</p>

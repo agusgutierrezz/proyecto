@@ -39,7 +39,7 @@ if ($_POST) {
           <input type="apellido" class="form-control" id="apellido" placeholder="apellido" name="apellido" required value="<?=$apellido?>">
         </div>
         <div class="form-group col-md-6">
-          <label for="emak"> Email <span>*</span></label>
+          <label for="email"> Email <span>*</span></label>
           <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
         </div>
         <div class="form-group col-md-6">
@@ -52,12 +52,12 @@ if ($_POST) {
         </div>
       </div>
       <div>
-        <input type="checkbox">
-        <label for="">Quiero recibir novedades via email de Feriate.com
+        <input type="checkbox" id="novedades">
+        <label for="novedades">Quiero recibir novedades via email de Feriate.com
       </div>
       <div>
-        <input type="checkbox">
-        <label for="">Acepto <a href="/terminos_condiciones.php">Terminos y Condiciones</a></label>
+        <input type="checkbox" id="terminos_condiciones">
+        <label for="terminos_condiciones">Acepto <a href="/terminos_condiciones.php">Terminos y Condiciones</a></label>
       </div>
       <button type="submit" class="btn btn-primary">Registrarme</button>
     </form>

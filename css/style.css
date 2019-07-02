@@ -5,8 +5,9 @@ body {
 a.nav-link {
   color: white !important;
   font-family: 'Inconsolata', sans-serif;
-  font-size: 20px
+  font-size: 20px;
 }
+
 a.navbar-brand{
   font-weight: bold;
   font-family: 'Inconsolata', sans-serif;
