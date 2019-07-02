@@ -103,6 +103,11 @@ div.descripcion input,textarea{
   width: 55%;
   border: 1px solid black;
 }
+button#crear{
+  width: 20%;
+  margin-top: 5%;
+  margin-left: 40%;
+}
 footer ul {
   margin-bottom: 0px;
 }

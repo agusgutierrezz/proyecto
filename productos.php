@@ -61,13 +61,13 @@ require_once("./resources/funciones_productos.php");
             </div>
             <div class="comprar">
                 <?php if(estaLogueado()):?>
-                  <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php"> Agregar al carrito! </a></button>
-                  <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
+                  <a href="carrito.php"> <button type="button" name="button"><i class="fas fa-shopping-cart">Agregar al carrito!</i></button></a>
+                  <button type="button" name="button"><i class="fas fa-tag">Reserva este articulo!</i></button>
                <?php endif ?>
                  <?php if(!estaLogueado()):?>
-                      <a href="login.php" ><button type="button" name="button"><i class="fas fa-tag"></i>logueate para comprar</button>
+                      <a href="login.php"><button type="button" name="button"><i class="fas fa-tag">Logueate para comprar</i></button></a>
                 <?php endif ?>
-              <a href="feria.php?id=<?php echo $producto['fe_id'] ?>" ><button type="button" name="button"><i class="fas fa-tag"></i>Ir a esta feria</button></a>
+              <a href="feria.php?id=<?php echo $producto['fe_id'] ?>" ><button type="button" name="button"><i class="fas fa-tag">Ir a esta feria</i></button></a>
             </div>
           </div>
         </div>

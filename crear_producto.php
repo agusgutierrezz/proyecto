@@ -165,7 +165,7 @@ if ($_POST) {
             </select>
       </div>
       </div>
-      <button type="submit"id="crear" class="btn btn-primary">Ferialo!</button>
+      <button type="submit" id="crear" class="btn btn-primary">Ferialo!</button>
     </form>
     <ul>
       <?php foreach ($errores as $error) :?>

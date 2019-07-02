@@ -40,7 +40,7 @@ if ($_GET){
         <?php if(estaLogueado()):?>
          <?php if(esDuenoDeFeria($value)):?>
            <a href="crear_producto.php?feria=<?php echo $datos_ferias["id"] ?>"><button id="boton" type="button" name="button">Cargar Productos</button></a>
-           <a href="#"><button id="boton" type="button" name="button" disable>Editar Feria</button></a
+           <a href="#"><button id="boton" type="button" name="button" disable>Editar Feria</button></a>
          <?php endif ?>
       <?php endif ?>
     </div>
@@ -88,15 +88,15 @@ if ($_GET){
             </div>
             <div class="comprar">
             <?php if(estaLogueado()):?>
-              <button type="button" name="button"> <i class="fas fa-shopping-cart"></i> <a href="carrito.php"> Agregar al carrito! </a></button>
-              <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
+              <a href="carrito.php"><button type="button" name="button"><i class="fas fa-shopping-cart">Agregar al carrito!</i></button></a>
+              <button type="button" name="button"><i class="fas fa-tag">Reserva este articulo!</i></button>
             <?php endif ?>
             <?php if(!estaLogueado()):?>
-                 <a href="login.php" ><button type="button" name="button"><i class="fas fa-tag"></i>logueate para comprar</button>
+                 <a href="login.php" ><button type="button" name="button"><i class="fas fa-tag">logueate para comprar</i></button></a>
            <?php endif ?>
            <?php if(estaLogueado()):?>
             <?php if(esDuenoDeFeria($value)):?>
-              <a href="#"><button id="boton" type="button" name="button">Editar Producto</button></a>
+              <a href="#"><button id="boton" type="button" name="button"><i class="fas fa-tag">Editar Producto</i></button></a>
             <?php endif ?>
          <?php endif ?>
             </div>

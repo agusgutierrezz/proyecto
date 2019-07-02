@@ -32,35 +32,32 @@ $usuarioLogueado = traerUsuarioLogueado();
             <?php if ($usuarioLogueado["avatar"] == null) : ?>
             <img src=".\img_user\usuaria.jpg" alt="" class="img-thumbnail">
             <?php endif; ?>
-</div>
+   </div>
     <div class="datos">
-    <h1><?php if ($usuarioLogueado != null) : ?>
-      <h2 class="title">Bienvenida <?=$usuarioLogueado["nombre"]?></h2>
-    <?php else: ?>
-    <?php header("location: login.php") ?>
-    <?php endif; ?></h1>
-    <?php if ($usuarioLogueado != null) : ?>
-    <h4><?=$usuarioLogueado["email"]?></h4>
-    <?php endif; ?>
-    <h6>Registrada desde 1/04/2018</h6>
-    <button type="button" name="button">Editar informacion  <i class="fas fa-user-edit"></i></button>
-    </div>
+        <h1><?php if ($usuarioLogueado != null) : ?>
+          <h2 class="title">Bienvenida <?=$usuarioLogueado["nombre"]?></h2>
+            <?php else: ?>
+            <?php header("location: login.php") ?>
+            <?php endif; ?></h1>
+            <?php if ($usuarioLogueado != null) : ?>
+              <h4><?=$usuarioLogueado["email"]?></h4>
+            <?php endif; ?>
+            <h6>Registrada desde 1/04/2018</h6>
+        <button type="button" name="button">Editar informacion<i class="fas fa-user-edit"></i></button>
+     </div>
     </div>
    <div class="secciones">
-<div class="comprar">
+     <div class="comprar">
         <h1>Gestiona tus ferias..</h1>
         <a href="mis_ferias.php?id=<?php echo traerUsuarioLogueado()["id"] ?>"><button type="button" name="button">Editar ferias <i class="fas fa-store"></i></button></a>
-         <a href="crear_feria.php"><button type="button" name="button">Crea una feria! <i class="fas fa-store"></i></button></a>
+        <a href="crear_feria.php">  <button type="button" name="button">Crea una feria! <i class="fas fa-store"></i></button></a>
      </div>
-          <div class="comprar">
-          <h1>.. o tus compras</h1>
-      <button type="button" name="button"><a href="carrito.php?id=<?php ?>">Mi carrito</a>  <i class="fas fa-shopping-cart"></i></button>
-      <button type="button" name="button"><a href="carrito.php?id=<?php ?>">Ver mis medios de pago</a>  <i class="fas fa-shopping-cart"></i></button>
+     <div class="comprar">
+        <h1>.. o tus compras</h1>
+        <a href="carrito.php?id=<?php ?>"><button type="button" name="button">Mi carrito<i class="fas fa-shopping-cart"></i></button></a>
+        <a href="carrito.php?id=<?php ?>"><button type="button" name="button">Ver mis medios de pago<i class="fas fa-shopping-cart"></i></button></a>
      </div>
-
-
     </div>
-
   </main>
   <footer>
   <?php include("footer.php") ?>
