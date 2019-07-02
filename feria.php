@@ -80,7 +80,9 @@ if ($_GET){
             <p class="card-text"><?php echo $producto['nombre'] ?></p>
             <div class="descripcion">
               <h3 class="precio"><b>Precio: <?php echo $producto['precio'] ?></b></h3>
-              <h3 class="talle"><b>Talle 39</b></h3>
+              <h3 class="talle"><b>Talle <?php echo $producto['talle'] ?></b></h3>
+              <h3 class="marca"><b>Marca <?php echo $producto['marca'] ?></b></h3>
+              <h3 class="estado"><b>Estado <?php echo $producto['estado'] ?></b></h3>
               <h3 class="cantidad"><b>cantidad: <?php echo $producto['cantidad'] ?></b></h3>
             </div>
             <div class="comprar">
