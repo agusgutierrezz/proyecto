@@ -39,7 +39,8 @@ if ($_GET){
         <h2> <i class="fas fa-star-of-life"></i>Fecha: 09/09/2019</h2>
         <?php if(estaLogueado()):?>
          <?php if(esDuenoDeFeria($value)):?>
-           <a href="crear_producto.php?feria=<?php echo $datos_ferias["id"] ?>"><button id="boton" type="button" name="button">Cargar Productos</button></a
+           <a href="crear_producto.php?feria=<?php echo $datos_ferias["id"] ?>"><button id="boton" type="button" name="button">Cargar Productos</button></a>
+           <a href="#"><button id="boton" type="button" name="button" disable>Editar Feria</button></a
          <?php endif ?>
       <?php endif ?>
     </div>
@@ -75,7 +76,7 @@ if ($_GET){
   <?php if(!empty($datos_productos)) :?>
       <?php foreach ($datos_productos as $producto) :?>
           <div class="card" >
-          <img src="images/shoes.jpg" class="card-img-top" alt="...">
+          <img src="img_user/<?php echo $producto['foto_producto'] ?>" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text"><?php echo $producto['nombre'] ?></p>
             <div class="descripcion">
@@ -93,6 +94,11 @@ if ($_GET){
             <?php if(!estaLogueado()):?>
                  <a href="login.php" ><button type="button" name="button"><i class="fas fa-tag"></i>logueate para comprar</button>
            <?php endif ?>
+           <?php if(estaLogueado()):?>
+            <?php if(esDuenoDeFeria($value)):?>
+              <a href="#"><button id="boton" type="button" name="button">Editar Producto</button></a>
+            <?php endif ?>
+         <?php endif ?>
             </div>
           </div>
         </div>
