@@ -9,7 +9,9 @@ $errores =[];
 if ($_POST) {
 
 // Leer los datos del formulario
-  $id_feria = $_POST["feria"];
+  $id = parse_url($_SERVER['HTTP_REFERER']);
+  parse_str($id["query"],$query);
+  $id_feria = $query['feria'];
   $nombre = $_POST["nombre"];
   $precio = $_POST["precio"];
   $cantidad = $_POST["cantidad"];
@@ -133,7 +135,6 @@ if ($_POST) {
     <div class="item">
       <label for=""> Categoria<span>*</span></label>
       <select name="categoria" required>
-            <option>-seleccionar-</option>
             <option>Ropa</option>
             <option>Muebles</option>
             <option>Juguetes</option>
@@ -143,7 +144,6 @@ if ($_POST) {
           <br>
       <label for=""> Talle<span>*</span></label>
       <select name="talle">
-        <option>-seleccionar-</option>
             <option>xs</option>
             <option>s</option>
             <option>m</option>
@@ -158,7 +158,6 @@ if ($_POST) {
       <br>
         <label for=""> Estado<span>*</span></label>
         <select name="estado">
-          <option>-seleccionar-</option>
               <option>malo</option>
               <option>regular</option>
               <option>bueno</option>
