@@ -16,6 +16,7 @@ $usuarioLogueado = traerUsuarioLogueado();
     <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur">
     <script src="https://kit.fontawesome.com/14dd9125ec.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/perfil.css">
     <title>Perfil</title>
   </head>
@@ -26,9 +27,6 @@ $usuarioLogueado = traerUsuarioLogueado();
   <main>
     <div class="info">
           <div class="img">
-            <?php if ($usuarioLogueado != null) : ?>
-            <img src="img_user/<?=$usuarioLogueado["avatar"]?>" alt="" class="img-thumbnail">
-            <?php endif; ?>
             <?php if ($usuarioLogueado["avatar"] == null) : ?>
             <img src=".\img_user\usuaria.jpg" alt="" class="img-thumbnail">
             <?php endif; ?>
@@ -43,7 +41,7 @@ $usuarioLogueado = traerUsuarioLogueado();
               <h4><?=$usuarioLogueado["email"]?></h4>
             <?php endif; ?>
             <h6>Registrada desde 1/04/2018</h6>
-        <button type="button" name="button">Editar informacion<i class="fas fa-user-edit"></i></button>
+        <button type="button" name="button">Editar informacion  <i class="fas fa-user-edit"></i></button>
      </div>
     </div>
    <div class="secciones">
