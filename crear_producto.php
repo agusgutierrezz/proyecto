@@ -157,7 +157,7 @@ if ($_POST) {
     </form>
     <ul>
       <?php foreach ($errores as $error) :?>
-        <li style="color:red"><?=$error?></a></li>
+        <li class="alert alert-danger" role="alert"><?=$error?></a></li>
       <?php endforeach; ?>
     </ul>
 </main>

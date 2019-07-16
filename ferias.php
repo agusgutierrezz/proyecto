@@ -62,7 +62,9 @@ if ($_GET){
     </div>
     <hr>
     <?php if(empty(datos_ferias($categoria))) :?>
-       <p style="color:red">Lo Sentimos No Hay Datos para la Categoria seleccionada</p>
+       <div class="alert alert-danger" role="alert">
+        Lo Sentimos No Hay Datos para la Categoria seleccionada
+       </div>
     <?php endif ;?>
     <main>
     <?php if(!empty(datos_ferias($categoria))) :?>
