@@ -1,6 +1,7 @@
 <?php
 
 require_once("./resources/funciones_usuarios.php");
+require_once("./resources/funciones_carrito.php");
 
 $usuarioLogueado = traerUsuarioLogueado();
 ?>
@@ -27,6 +28,9 @@ $usuarioLogueado = traerUsuarioLogueado();
   <main>
     <div class="info">
           <div class="img">
+            <?php if ($usuarioLogueado != null):?>
+              <img src="img_user/<?=$usuarioLogueado["avatar"]?>" alt="img-thumbnail">
+            <?php endif ?>
             <?php if ($usuarioLogueado["avatar"] == null) : ?>
             <img src=".\img_user\usuaria.jpg" alt="" class="img-thumbnail">
             <?php endif; ?>
@@ -52,8 +56,8 @@ $usuarioLogueado = traerUsuarioLogueado();
      </div>
      <div class="comprar">
         <h1>.. o tus compras</h1>
-        <a href="carrito.php?id=<?php ?>"><button type="button" name="button">Mi carrito<i class="fas fa-shopping-cart"></i></button></a>
-        <a href="carrito.php?id=<?php ?>"><button type="button" name="button">Ver mis medios de pago<i class="fas fa-shopping-cart"></i></button></a>
+        <a href="carrito.php?id=<?php  echo traerCarrito( traerUsuarioLogueado()["id"] ) ?>"><button type="button" name="button">Mi carrito<i class="fas fa-shopping-cart"></i></button></a>
+        <a href="http://www.mercadopago.com.ar" target="_blank"><button type="button" name="button">Ver mis medios de pago<i class="fas fa-shopping-cart"></i></button></a>
      </div>
     </div>
   </main>

@@ -79,11 +79,11 @@ if ($_POST) {
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nombre"> Nombre de la feria <span>*</span></label>
-          <input type="nombre" class="form-control" id="nombre" placeholder="Nombre de tu feria" name="nombre">
+          <input type="nombre" class="form-control" id="nombre" placeholder="Nombre de tu feria" name="nombre" required>
         </div>
         <div class="form-group col-md-6">
           <label for="ubicacion"> Ubicacion  <span>*</span></label>
-          <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion" name="ubicacion">
+          <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion" name="ubicacion" required>
         </div>
         <div class="form-group col-md-6">
           <label for="descripcion"> Descripcion <span>*</span></label>
@@ -91,7 +91,7 @@ if ($_POST) {
         </div>
         <div class="form-group col-md-6">
           <label for="categoria"> Horario <span>*</span></label>
-          <input list="horario"  class="form-control" name="horario" placeholder="horario" autocomplete="off" >
+          <input list="horario"  class="form-control" name="horario" placeholder="horario" autocomplete="off" required>
         </div>
         <div class="foto">
           <div class="form-group col-md-6">

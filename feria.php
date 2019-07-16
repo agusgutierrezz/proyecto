@@ -92,7 +92,7 @@ if ($_GET){
             </div>
         </div>
             <div class="comprar">
-            <?php if(estaLogueado()):?>
+            <?php if(estaLogueado() && !esDuenoDeFeria($value) ):?>
               <a href="carrito.php"><button type="button" name="button" class="btn btn-light m-2"><i class="fas fa-shopping-cart"></i>  Agregar al carrito!</button></a>
               <button type="button" name="button" class="btn btn-light m-2"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
             <?php endif ?>
