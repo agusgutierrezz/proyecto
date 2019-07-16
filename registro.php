@@ -58,7 +58,7 @@ if ($_POST) {
       </div>
       <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="terminos_condiciones">
-      <label class="form-check-label" for="terminos_condiciones">Acepto <a href="/terminos_condiciones.php">Terminos y Condiciones</a></label>
+      <label class="form-check-label" for="terminos_condiciones">Acepto <a href="./terminos_condiciones.php">Terminos y Condiciones</a></label>
       </div>
       <button type="submit" class="btn btn-primary">Registrarme</button>
     </form>
