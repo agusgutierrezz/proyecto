@@ -72,7 +72,7 @@ if ($_GET){
           <div class="header-feria">
             <h3><?php echo $feria["nombre"] ?></h3>
             <h5><?php echo $feria["ubicacion"] ?></h5>
-            <img src="images/mapa.jpeg" alt="">
+            <a target="_blank" href="https://www.google.com/maps/place/<?php echo $feria['ubicacion'] ?>" title="Click para ver en el mapa"><img src="images/mapa.jpeg" alt=""></a>
           <!---  <img src="./img_user/<?php // echo $feria["avatar"] ?>" alt="">  --->
           </div>
           <div class="boton-header">
