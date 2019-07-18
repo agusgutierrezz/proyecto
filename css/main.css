@@ -26,3 +26,7 @@ nav a i {
   color:#FFD0D9 ;
   font-size: 25px;
 }
+
+.alert-danger p{
+  text-align: center;
+}
