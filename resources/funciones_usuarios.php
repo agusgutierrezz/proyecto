@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once("pdo.php");
+
 
 function validarRegistracion($datos){
 
@@ -14,7 +16,10 @@ function validarRegistracion($datos){
     $id = rand(1,10000000000);
 
   if(strlen($nombre) < 5) {
-    $errores []= "El nombre debe teber al menos 5 caracteres";
+    $errores []= "El nombre debe teber al menos 4 caracteres";
+  }
+  if(strlen($apellido) < 5) {
+    $errores []= "El apellido debe teber al menos 4 caracteres";
   }
   if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
       $errores[] ="El mail no tiene el formato correcto <br>";
@@ -39,13 +44,13 @@ function validarRegistracion($datos){
     //guardar los datos en un archivo
     //mover foto
 
-    $miarchivo = dirname(_FILE_);
-    $miarchivo = $miarchivo. "/img/";
-    $miarchivo = $miarchivo. $pic_name;
-    move_uploaded_file( $archivo , $miarchivo);
+     $miarchivo = dirname(_FILE_);
+     $miarchivo = $miarchivo. "/img/";
+     $miarchivo = $miarchivo. $pic_name;
+     move_uploaded_file( $archivo , $miarchivo);
 
     save_registered_user($nombre, $email, $pass_hash, $id, $pic_name, $ext);
-
+    //save_registered_user(abrirBaseDeDatos(), $nombre, $apellido, $email, $pass_hash);
     header("location: home.php");
 
   }else{
@@ -53,28 +58,30 @@ function validarRegistracion($datos){
   }
  }
 //validacion y guardar usuario
-function save_registered_user($nombre, $email, $pass_hash, $id, $pic_name, $ext){
-  $archivo = "./db/usuarios.json";
-  $usuario = [
-      "nombre" => $nombre,
-      "email" => $email,
-      "pass" => $pass_hash,
-      "id" => $id,//proximoId(),
-      "avatar" => $pic_name
-    ];
+ function save_registered_user($nombre, $email, $pass_hash, $id, $pic_name, $ext){
+   $archivo = "./db/usuarios.json";
+   $usuario = [
+       "nombre" => $nombre,
+       "email" => $email,
+       "pass" => $pass_hash,
+       "id" => $id,//proximoId(),
+       "avatar" => $pic_name
+     ];
 
-  //para leer y obtener el contenido del archivo
-  $json_content = file_get_contents($archivo);
-  //para convertir el contenido del archivo en un array
-  $array_content = json_decode($json_content,true);
-  //para pechar al array el nuevo usuario
-  array_push($array_content["usuarios"], $usuario);
-  // para convertir el array a json
-  $usuarios_json = json_encode($array_content);
-  //p guardar/ESCRIBIR usuarios en el archivo "usuarios.json"
-  file_put_contents($archivo, $usuarios_json);
+//   //para leer y obtener el contenido del archivo
+   $json_content = file_get_contents($archivo);
+//   //para convertir el contenido del archivo en un array
+   $array_content = json_decode($json_content,true);
+   //para pechar al array el nuevo usuario
+   array_push($array_content["usuarios"], $usuario);
+   // para convertir el array a json
+   $usuarios_json = json_encode($array_content);
+//   //p guardar/ESCRIBIR usuarios en el archivo "usuarios.json"
+   file_put_contents($archivo, $usuarios_json);
 
 }
+
+
 
 // function proximoId() {
 //   $usuarios = traerTodosLosUsuarios();
@@ -169,5 +176,10 @@ function esDuenodeFeria($id_feria){
     }
 }
 
+//REFACTORIZACION CODIGO - PARA TRABAJAR CON LA BASE DE DATOS
+// function save_registered_user($db, $nombre, $apellido, $email, $pass_hash){
+//   $fecha_registracion = date("Y-m-d");
+//   $consulta = $db->query("INSERT into usuarios values (default, '$nombre', '$apellido', '$email', '$pass_hash', null, null, null, null, '$fecha_registracion', null, 1, 1)");
+// }
 
  ?>

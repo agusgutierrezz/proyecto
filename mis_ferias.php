@@ -26,6 +26,7 @@ if ($_GET){
   <?php
     include("head.php");
         ?>
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -46,7 +47,7 @@ if ($_GET){
     <hr>
     <?php if(empty(datos_mis_ferias($usuario_id))) :?>
        <div class="alert alert-danger" role="alert">
-        Lo Sentimos todavia no creaste ninguna FERIA!
+        <p>Lo Sentimos todavia no creaste ninguna FERIA!</p>
       </div>
     <?php endif ;?>
     <main>

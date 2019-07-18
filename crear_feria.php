@@ -86,12 +86,16 @@ if ($_POST) {
           <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion" name="ubicacion" required>
         </div>
         <div class="form-group col-md-6">
-          <label for="descripcion"> Descripcion <span>*</span></label>
-          <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion">
+          <label for="descripcion"> Desde <span>*</span></label>
+          <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="fecha de inicio" required>
         </div>
         <div class="form-group col-md-6">
-          <label for="categoria"> Horario <span>*</span></label>
-          <input list="horario"  class="form-control" name="horario" placeholder="horario" autocomplete="off" required>
+          <label for="categoria"> Hasta <span>*</span></label>
+          <input list="horario"  class="form-control" name="horario" placeholder="fecha de finalizacion" autocomplete="off" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="descripcion"> Descripcion <span>*</span></label>
+          <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion">
         </div>
         <div class="foto">
           <div class="form-group col-md-6">

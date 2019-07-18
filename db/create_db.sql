@@ -10,6 +10,7 @@ CREATE TABLE `feriate_db`.`usuarios` (
   `us_id` INT NOT NULL AUTO_INCREMENT,
   `us_nombre` VARCHAR(45) NOT NULL,
   `us_apellido` VARCHAR(45) NOT NULL,
+  `us_email` VARCHAR(45) NOT NULL,
   `us_pass` VARCHAR(100) NOT NULL,
   `us_tel` INT NULL,
   `us_direccion` VARCHAR(100) NULL,
