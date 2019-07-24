@@ -12,6 +12,7 @@ function validarRegistracion($datos){
     $pass_confirm = $datos["pass_confirm"];
     $pass_verify = password_verify($pass, $pass_hash);
     $id = rand(1,10000000000);
+    $aceptar_terminos = $datos["aceptar_terminos"];
 
   if(strlen($nombre) < 5) {
     $errores []= "El nombre debe teber al menos 5 caracteres";
@@ -33,6 +34,9 @@ function validarRegistracion($datos){
     }
     if(existeElEmail($email)){
       $errores[]= "Este email ya existe";
+    }
+    if (isset($_POST["aceptar_terminos"]) == NULL){
+      $errores[]= "Debe aceptar los Terminos y Condiciones";
     }
 
   if(empty($errores)){
