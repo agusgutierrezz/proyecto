@@ -65,6 +65,11 @@ if ($_POST) {
 <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur">
 <script src="https://kit.fontawesome.com/14dd9125ec.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <link rel="stylesheet" href="/resources/demos/style.css">
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <title>Crea tu feria</title>
 </head>
 <header>
@@ -86,12 +91,22 @@ if ($_POST) {
           <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion" name="ubicacion" required>
         </div>
         <div class="form-group col-md-6">
-          <label for="descripcion"> Descripcion <span>*</span></label>
-          <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion">
+          <label for="datepicker"> Desde <span>*</span></label>
+          <input type="text" class="form-control" id="datepicker" placeholder="fecha inicio" name="desde" required>
         </div>
         <div class="form-group col-md-6">
-          <label for="categoria"> Horario <span>*</span></label>
-          <input list="horario"  class="form-control" name="horario" placeholder="horario" autocomplete="off" required>
+          <label for="datepicker1"> Hasta <span>*</span></label>
+          <input type="text" class="form-control" id="datepicker1" placeholder="fecha finalizacion" name="hasta" required>
+        </div>
+       <script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+          $( "#datepicker1" ).datepicker();
+        } );
+        </script>
+        <div class="form-group col-md-6">
+          <label for="descripcion"> Descripcion <span>*</span></label>
+          <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion">
         </div>
         <div class="foto">
           <div class="form-group col-md-6">
@@ -112,9 +127,9 @@ if ($_POST) {
     </div>
   </div>
   <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+-->  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

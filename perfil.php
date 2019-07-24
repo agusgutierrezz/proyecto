@@ -28,7 +28,7 @@ $usuarioLogueado = traerUsuarioLogueado();
   <main>
     <div class="info">
           <div class="img">
-            <?php if ($usuarioLogueado != null):?>
+            <?php if ($usuarioLogueado != null && $usuarioLogueado["avatar"]!= null ):?>
               <img src="img_user/<?=$usuarioLogueado["avatar"]?>" alt="img-thumbnail">
             <?php endif ?>
             <?php if ($usuarioLogueado["avatar"] == null) : ?>

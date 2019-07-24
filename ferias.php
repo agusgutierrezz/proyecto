@@ -37,15 +37,15 @@ if ($_GET){
       <h1>FERIAS AMERICANAS</h1>
       <h2>Elegi la feria segun su ubicacion o los productos que te gusten</h2>
     </div>
+    <?php if(!empty(datos_ferias($categoria))) :?>
     <div class="botones">
       <div class="dropdown">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           ORDENAR POR
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Ubicacion</a>
+          <a class="dropdown-item" href="#">Fecha</a>
         </div>
       </div>
       <div class="dropdown">
@@ -53,17 +53,16 @@ if ($_GET){
           FILTRAR POR
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Producto</a>
         </div>
       </div>
     </div>
+    <?php endif; ?>
     </div>
     <hr>
     <?php if(empty(datos_ferias($categoria))) :?>
        <div class="alert alert-danger" role="alert">
-        Lo Sentimos No Hay Datos para la Categoria seleccionada
+        <p>Lo Sentimos No Hay Datos para la Categoria seleccionada</p>
        </div>
     <?php endif ;?>
     <main>
@@ -73,7 +72,7 @@ if ($_GET){
           <div class="header-feria">
             <h3><?php echo $feria["nombre"] ?></h3>
             <h5><?php echo $feria["ubicacion"] ?></h5>
-            <img src="images/mapa.jpeg" alt="">
+            <a target="_blank" href="https://www.google.com/maps/place/<?php echo $feria['ubicacion'] ?>" title="Click para ver en el mapa"><img src="images/mapa.jpeg" alt=""></a>
           <!---  <img src="./img_user/<?php // echo $feria["avatar"] ?>" alt="">  --->
           </div>
           <div class="boton-header">

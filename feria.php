@@ -47,6 +47,7 @@ if ($_GET){
       <?php endif ?>
     </div>
   </div>
+  <?php if(!empty($datos_productos)) :?>
   <div class="botones">
     <div class="dropdown">
       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,10 +70,11 @@ if ($_GET){
       </div>
     </div>
   </div>
+<?php endif ;?>
   <hr>
     <?php if(empty($datos_productos)) :?>
      <div class="alert alert-danger" role="alert">
-     Lo Sentimos No Hay Productos para la Categoria seleccionada
+    <p>Lo Sentimos No Hay Productos para la Categoria seleccionada</p>
     </div>
   <?php endif ;?>
   <main>

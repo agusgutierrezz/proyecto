@@ -19,8 +19,12 @@
             <h2>PUBlICA TU FERIA</h2>
             <h3>y compartila con tus clientes, ellos reservan los productos y los retiran ese dia!</h3>
           </div>
-                <a href="crear_feria.php"><button id="boton" type="button" name="button">CREA TU FERIA!!!!</button></a>
-               <a href="login.php"><button id="boton" type="button" name="button">Crea tu feria!</button></a>
+          <?php if(estaLogueado()):?>
+            <a href="crear_feria.php"><button id="boton" type="button" name="button">Crea tu feria!!!!</button></a>
+          <?php endif;?>
+          <?php if(!estaLogueado()):?>
+            <a href="login.php"><button id="boton" type="button" name="button">Logueate y Crea tu feria!</button></a>
+          <?php endif;?>
           <div class="lista">
             <ul>
               <li><i class="fas fa-star-of-life"></i>
