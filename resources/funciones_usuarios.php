@@ -57,6 +57,7 @@ require_once("./mail.php");
    }else{
      return $errores;
    }
+
   }
   function save_registered_user($db, $nombre, $apellido, $email, $pass_hash, $notificaciones){
      $fecha_registracion = date("Y-m-d");
