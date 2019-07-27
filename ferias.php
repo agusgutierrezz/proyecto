@@ -4,20 +4,19 @@ if ($_GET){
 
   $categoria = $_GET["categoria"];
   function datos_ferias($categoria){
-    $archivo = "./db/ferias.json";
-    //para leer y obtener el contenido del archivo
-    $json_content = file_get_contents($archivo);
-    //para convertir el contenido del archivo en un array
-    $array_content = json_decode($json_content,true);
-    $datos_ferias =[];
-    foreach ($array_content["ferias"] as $feria ) {
 
-      if($feria["categoria"] == $categoria){
-        array_push($datos_ferias, $feria) ;
-      }
-    }
-    return $datos_ferias;
-  }
+        global $db;
+
+         $query = $db->prepare("SELECT * FROM feriate_db.ferias
+                                INNER JOIN productos ON pr_fe_id = fe_id
+                                INNER JOIN categorias
+                                WHERE pr_cat_id = cat_id
+                                AND cat_nombre = '$categoria'
+                                GROUP BY fe_id");
+         $query->execute();
+         $datos_ferias = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $datos_ferias;
+}
 }
  ?>
 
@@ -70,23 +69,23 @@ if ($_GET){
         <?php foreach (datos_ferias($categoria) as $feria) :?>
         <div class="feria">
           <div class="header-feria">
-            <h3><?php echo $feria["nombre"] ?></h3>
-            <h5><?php echo $feria["ubicacion"] ?></h5>
-            <a target="_blank" href="https://www.google.com/maps/place/<?php echo $feria['ubicacion'] ?>" title="Click para ver en el mapa"><img src="images/mapa.jpeg" alt=""></a>
+            <h3><?php echo $feria["fe_nombre"] ?></h3>
+            <h5><?php echo $feria["fe_ubicacion"] ?></h5>
+            <a target="_blank" href="https://www.google.com/maps/place/<?php echo $feria['fe_ubicacion'] ?>" title="Click para ver en el mapa"><img src="images/mapa.jpeg" alt=""></a>
           <!---  <img src="./img_user/<?php // echo $feria["avatar"] ?>" alt="">  --->
           </div>
           <div class="boton-header">
-            <a href="feria.php?id=<?= $feria["id"]?>" ><button type="button" name="button">VER FERIA!</button></a>
+            <a href="feria.php?id=<?= $feria["fe_id"]?>" ><button type="button" name="button">VER FERIA!</button></a>
           </div>
           <div class="descripcion">
-            <?php echo $feria["descripcion"] ?>
+            <?php echo $feria["fe_descripcion"] ?>
           </div>
           <div class="cuerpo-feria">
-            <?php if(!empty($feria["avatar"])) :?>
-              <img src="img_user/<?php echo $feria["avatar"] ?>" alt="">
-              <img src="img_user/<?php echo $feria["avatar"] ?>" alt="">
+            <?php if(!empty($feria["img_nombre"])) :?>
+              <img src="img_user/<?php echo $feria["img_nombre"] ?>" alt="">
+              <img src="img_user/<?php echo $feria["img_nombre"] ?>" alt="">
              <?php endif; ?>
-            <?php if(empty($feria["avatar"])) :?>
+            <?php if(empty($feria["img_nombre"])) :?>
                <img src="images/logo_feriate_deffault.png" alt="">
                <img src="images/logo_feriate_deffault_ii.png" alt="">
             <?php endif; ?>

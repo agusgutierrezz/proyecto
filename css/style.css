@@ -78,6 +78,7 @@ div.imagen {
 }
 div.imagen img{
   width: 100%;
+  max-height: 200px;
 }
 footer ul li {
   width: 100%;
