@@ -53,11 +53,11 @@ if ($_POST) {
         </div>
       </div>
       <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Quiero recibir novedades de Feriate!</label>
+      <input type="checkbox" class="form-check-input" id="notificaciones" name="notificaciones">
+      <label class="form-check-label" for="notificaciones">Quiero recibir novedades de Feriate!</label>
       </div>
       <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="terminos_condiciones">
+      <input type="checkbox" class="form-check-input" id="terminos_condiciones" placeholder="aceptar_terminos" name="aceptar_terminos" required>
       <label class="form-check-label" for="terminos_condiciones">Acepto <a href="./terminos_condiciones.php">Terminos y Condiciones</a></label>
       </div>
       <button type="submit" class="btn btn-primary">Registrarme</button>

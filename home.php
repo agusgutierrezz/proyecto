@@ -4,6 +4,7 @@
 <head>
   <?php
   include("head_home.php");
+  include("./resources/funciones_productos.php");
    ?>
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -19,53 +20,18 @@
           <div class="categorias">
             <article class="cat">
             <div class="texto">
-            <h2>ROPA Y ACCESORIOS</h2>
-            <a href="ferias.php?categoria=ropa_accesorios"><button type="button" name="button">VER LAS FERIAS</button></a>
-            <a href="productos.php?categoria=ropa_accesorios"><button type="button" name="button">VER PRODUCTOS</button></a>
-            </div>
-            <div class="imagen">
-              <img src="images/inicio.jpg" alt="">
-            </div>
-            </article>
-            <article class="cat">
-            <div class="texto">
-            <h2>MUEBLES</h2>
-            <a href="ferias.php?categoria=muebles"><button type="button" name="button">VER LAS FERIAS</button></a>
-          <a href="productos.php?categoria=muebles"><button type="button" name="button">VER PRODUCTOS</button></a>
-            </div>
-            <div class="imagen">
-              <img src="images/muebles.jpg" alt="">
-            </div>
-            </article>
-            <article class="cat">
-            <div class="texto">
-            <h2>ELECTRO</h2>
-            <a href="ferias.php?categoria=electro"><button type="button" name="button">VER LAS FERIAS</button></a>
-            <a href="productos.php?categoria=electro"><button type="button" name="button">VER PRODUCTOS</button></a>
-            </div>
-            <div class="imagen">
-              <img src="images/electro.jpg" alt="">
-            </div>
-            </article>
-            <article class="cat">
-            <div class="texto">
-            <h2>CALZADO</h2>
-            <a href="ferias.php?categoria=calzado"><button type="button" name="button">VER LAS FERIAS</button></a>
-            <a href="productos.php?categoria=calzado"><button type="button" name="button">VER PRODUCTOS</button></a>
-            </div>
-            <div class="imagen">
-              <img src="images/shoes.jpg" alt="">
-            </div>
-            </article>
-            <article class="cat">
-            <div class="texto">
-            <h2>JUGUETES</h2>
-            <a href="ferias.php?categoria=juguetes"><button type="button" name="button">VER LAS FERIAS</button></a>
-            <a href="productos.php?categoria=juguetes"><button type="button" name="button">VER PRODUCTOS</button></a>
-            </div>
-            <div class="imagen">
-              <img src="images/juguetes.jpg" alt="">
-            </div>
+              <?php foreach (traerCategorias() as $categoria) :?>
+                <h2><?php echo  strtoupper($categoria["cat_nombre"]) ?></h2>
+                <a href="ferias.php?categoria=<?php echo $categoria["cat_nombre"] ?>"><button type="button" name="button">VER LAS FERIAS</button></a>
+                <a href="productos.php?categoria=<?php echo $categoria["cat_nombre"] ?>"><button type="button" name="button">VER PRODUCTOS</button></a>
+                </div>
+                <div class="imagen">
+                  <img src="images/<?php echo $categoria["cat_img"] ?>" alt="">
+                </div>
+                </article>
+                <article class="cat">
+                <div class="texto">
+              <?php endforeach; ?>
             </article>
     </div>
   </main>
