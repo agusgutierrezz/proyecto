@@ -17,12 +17,16 @@ require_once("./resources/funciones_usuarios.php");
    ?>
    <link rel="stylesheet" href="./css/main.css">
    <link rel="stylesheet" href="./css/feria.css">
+   <link rel="stylesheet" href="./css/productos.css">
 </head>
 <body>
 <header>
 <?php include("header.php") ?>
   </header>
   <div class="container">
+    <div class="inicio">
+        <h1>Productos</h1>
+    </div>
     <?php if(!empty($datos_productos)) :?>
   <div class="botones">
     <div class="dropdown">
@@ -69,14 +73,14 @@ require_once("./resources/funciones_usuarios.php");
             <div class="comprar">
                 <?php if(estaLogueado()):?>
                   <?php if(!esDuenodeProducto($producto['pr_id'])):?>
-                    <a href="carrito.php"> <button type="button" name="button"><i class="fas fa-shopping-cart">Agregar al carrito!</i></button></a>
-                    <button type="button" name="button"><i class="fas fa-tag">Reserva este articulo!</i></button>
+                    <a href="carrito.php"> <button type="button" name="button"><i class="fas fa-shopping-cart"></i>  Agregar al carrito!</a></button>
+                    <button type="button" name="button"><i class="fas fa-tag"></i>  Reserva este articulo!</button>
                   <?php endif ?>
                <?php endif ?>
                  <?php if(!estaLogueado()):?>
-                      <a href="login.php"><button type="button" name="button"><i class="fas fa-tag">Logueate para comprar</i></button></a>
+                      <a href="login.php"><button type="button" name="button"><i class="fas fa-tag"></i>  Logueate para comprar</a></button>
                 <?php endif ?>
-              <a href="feria.php?id=<?php echo $producto['pr_fe_id'] ?>" ><button type="button" name="button"><i class="fas fa-tag">Ir a esta feria</i></button></a>
+              <a href="feria.php?id=<?php echo $producto['pr_fe_id'] ?>" ><button type="button" name="button"><i class="fas fa-tag"></i>  Ir a esta feria</a></button>
             </div>
           </div>
         </div>

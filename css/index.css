@@ -7,7 +7,9 @@ div.inicio {
   width: 90%;
   margin: 21px auto;
   text-align: center;
-  position: relative;
+  box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+  padding: 2%;
+  background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
 div.inicio h1 {
 font-family: 'Inconsolata', sans-serif;
@@ -89,7 +91,6 @@ div.cuerpo-feria {
 div.botones {
   display: flex;
   justify-content: space-around;
-margin-top: -5%;
 }
 a#dropdownMenuLink.btn {
   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
@@ -109,6 +110,9 @@ div.cuerpo-feria img {
   width: 45%;
 }
 @media (min-width: 940px){
+div.container{
+  width: 90%;
+}
 div.feria{
   width: 30%;
 }
@@ -116,7 +120,7 @@ div.header-feria h3,h5{
   padding: 3%;
 }
 div.header-feria h5{
-  height: 112px;
+  height: 150px;
 }
 main{
   display: flex;
