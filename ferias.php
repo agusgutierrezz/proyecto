@@ -32,8 +32,9 @@ if ($_GET){
   <header>
   <?php include("header.php") ?>
   </header>
+  <div class="container">
     <div class="inicio">
-      <h1>FERIAS AMERICANAS</h1>
+      <h1>Ferias Americanas</h1>
       <h2>Elegi la feria segun su ubicacion o los productos que te gusten</h2>
     </div>
     <?php if(!empty(datos_ferias($categoria))) :?>
@@ -57,10 +58,9 @@ if ($_GET){
       </div>
     </div>
     <?php endif; ?>
-    </div>
     <hr>
     <?php if(empty(datos_ferias($categoria))) :?>
-       <div class="alert alert-danger" role="alert">
+       <div class="alert alert-danger mx-5" role="alert" >
         <p>Lo Sentimos No Hay Datos para la Categoria seleccionada</p>
        </div>
     <?php endif ;?>
@@ -94,10 +94,11 @@ if ($_GET){
         <?php endforeach ?>
      <?php endif; ?>
   </main>
+</div>
   <footer>
   <?php include("footer.php") ?>
   </footer>
-
+    </div>
   <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

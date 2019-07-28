@@ -86,10 +86,9 @@ div.producto{
 div.productos button{
   background-color: white;
   padding: 2%;
-  color:black;
+  color:#3e403f;;
   border: 2px solid white;
   font-family: "Inconsolata", sans-serif;
-  font-weight: bold;
   margin: 0 auto;
 }
 div.mapa{
@@ -98,6 +97,7 @@ div.mapa{
 div.comprar button{
   font-family: "Inconsolata", sans-serif;
   background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+  color:
 }
 div.card{
   border-radius: 13px 13px;
