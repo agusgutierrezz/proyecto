@@ -49,7 +49,7 @@ if ($_GET){
   </header>
   <div class="container">
     <div class="inicio">
-      <h1>MIS FERIAS</h1>
+      <h1>Mis ferias</h1>
     </div>
     <hr>
     <?php if(empty(datos_mis_ferias($usuario_id))) :?>

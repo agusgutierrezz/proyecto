@@ -25,6 +25,7 @@ div.info h1 {
   font-size: 215%;
     color:#3e403f;
 }
+
 div.info h2 {
   font-family: "Inconsolata", sans-serif;
   width: 80%;
@@ -93,6 +94,14 @@ div.productos button{
 }
 div.mapa{
   display: none;
+}
+div.info{
+  margin-bottom: 5%;
+}
+div.info button{
+  font-family: "Inconsolata", sans-serif;
+  background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+  margin-top: 5%;
 }
 div.comprar button{
   font-family: "Inconsolata", sans-serif;

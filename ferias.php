@@ -25,7 +25,6 @@ if ($_GET){
   <?php
     include("head.php");
         ?>
-<link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -75,7 +74,7 @@ if ($_GET){
           <!---  <img src="./img_user/<?php // echo $feria["avatar"] ?>" alt="">  --->
           </div>
           <div class="boton-header">
-            <a href="feria.php?id=<?= $feria["fe_id"]?>" ><button type="button" name="button">VER FERIA!</button></a>
+            <a href="feria.php?id=<?= $feria["fe_id"]?>" ><button class="btn btn-light" type="button" name="button">Ver feria!</button></a>
           </div>
           <div class="descripcion">
             <?php echo $feria["fe_descripcion"] ?>
