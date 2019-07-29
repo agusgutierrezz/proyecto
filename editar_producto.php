@@ -1,5 +1,8 @@
 <?php include("./resources/funciones_productos.php");
-
+if ($_GET) {
+$value = $_GET["id"];
+  $datos_producto = productosPorId($value);
+}
 $nombre="";
 $precio="";
 $descripcion="";
@@ -82,25 +85,26 @@ if ($_POST) {
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nombre"> Nombre <span>*</span></label>
-        <input type="nombre" class="form-control" id="nombre" placeholder="nombre de tu producto" name="nombre">
+        <input type="nombre" class="form-control" id="nombre" placeholder="nombre de tu producto" name="nombre" value="<?php echo $datos_producto["pr_nombre"] ?>">
       </div>
       <div class="form-group col-md-6">
         <label for="precio"> Precio <span>*</span></label>
-        <input type="number" class="form-control" id="precio" placeholder="precio" name="precio">
+        <input type="number" class="form-control" id="precio" placeholder="precio" name="precio"value="<?php echo $datos_producto["pr_precio"] ?>">
       </div>
       <div class="form-group col-md-6">
         <label for="cantidad"> Cantidad <span>*</span></label>
-        <input type="text" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad" required>
+        <input type="text" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad" required value="<?php echo $datos_producto["pr_cantidad"] ?>">
       </div>
       <div class="form-group col-md-6">
         <label for="pass">Descripcion<span>*</span></label>
-        <textarea type="text" class="form-control" id="descripcion" placeholder="Descripcion" name="descripcion" required ></textarea>
+        <textarea type="text" class="form-control" id="descripcion" placeholder="Descripcion" name="descripcion" required >"<?php echo $datos_producto["pr_descripcion"] ?>"</textarea>
       </div>
       <div class="form-group col-md-4">
         <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">Categoria<span>*</span></label>
           </div>
             <select class="custom-select" id="inputGroupSelect01" name="categoria">
+              <option selected><?php echo $datos_producto["pr_cat_nombre"] ?></option>
               <?php foreach (traerCategorias() as $categoria)  :?>
                 <option value="<?php echo $categoria["cat_id"] ?>"><?php echo $categoria["cat_nombre"] ?></option>
               <?php endforeach;?>
@@ -111,7 +115,7 @@ if ($_POST) {
             <label class="input-group-text" for="inputGroupSelect01">Talle<span>*</span></label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" name="talle">
-            <option selected>xs</option>
+            <option selected><?php echo $datos_producto["pr_talle"] ?></option>
             <option value="1">s</option>
             <option value="2">m</option>
             <option value="3">l</option>
@@ -123,7 +127,7 @@ if ($_POST) {
             <label class="input-group-text" for="inputGroupSelect01">Estado <span>*</span></label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" name="estado">
-            <option selected>elige</option>
+            <option selected><?php echo $datos_producto["pr_estado"] ?></option>
             <option value="bueno">bueno</option>
             <option value="malo">malo</option>
             <option value="nuevo">nuevo</option>
@@ -151,7 +155,7 @@ if ($_POST) {
         <input type="file" class="form-control-file" name="" value="">
       </div>
     </div>
-     <button type="submit" class="btn btn-outline-light btn btn-lg btn-block mt-3" id="boton">Ferialo!</button>
+     <button type="submit" class="btn btn-outline-light btn btn-lg btn-block mt-3" id="boton">Guardar!</button>
     </form>
     <ul>
       <?php foreach ($errores as $error) :?>

@@ -43,7 +43,7 @@ if ($_GET){
         <?php if(estaLogueado()):?>
          <?php if(esDuenoDeFeria($value)):?>
            <a href="crear_producto.php?feria=<?php echo $datos_ferias["fe_id"] ?>"><button id="boton" type="button" name="button">Cargar Productos</button></a>
-           <a href="#"><button id="boton" type="button" name="button" disable>Editar Feria</button></a>
+           <a href="editar_feria.php?id=<?php echo $datos_ferias["fe_id"] ?>"><button id="boton" type="button" name="button" disable>Editar Feria</button></a>
          <?php endif ?>
       <?php endif ?>
     </div>
@@ -111,7 +111,7 @@ if ($_GET){
            <?php endif ?>
            <?php if(estaLogueado()):?>
             <?php if(esDuenoDeFeria($value)):?>
-              <a href="#"><button id="boton"  type="button" name="button" class="btn btn-light m-2"><i class="fas fa-tag"></i>  Editar Producto</button></a>
+              <a href="editar_producto.php?id=<?php echo $producto['pr_id'] ?>"><button id="boton"  type="button" name="button" class="btn btn-light m-2"><i class="fas fa-tag"></i>  Editar Producto</button></a>
             <?php endif ?>
          <?php endif ?>
 
