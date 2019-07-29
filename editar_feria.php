@@ -64,7 +64,7 @@ if ($_POST) {
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/crear_feria.css">
-<link rel="stylesheet" href="css/feria.css">
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Pathway+Gothic+One|Source+Sans+Pro&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@ if ($_POST) {
  <link rel="stylesheet" href="/resources/demos/style.css">
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<title>Crea tu feria</title>
+<title>Edita tu feria</title>
 </head>
 <header>
   <?php
@@ -83,6 +83,7 @@ if ($_POST) {
    ?>
 </header>
   <body>
+    <div class="container">
       <h1>Crea tu feria</h1>
     <div class="registro">
     <form method="post" action="crear_feria.php" enctype="multipart/form-data">
@@ -125,11 +126,12 @@ if ($_POST) {
   </div>
   <main>
     <div class="producto">
+      <h1>Tus productos</h1>
   <?php if(!empty($datos_productos)) :?>
       <?php foreach ($datos_productos as $producto) :?>
-          <div class="card" >
+          <div class="card col-md-6 mt-4" >
             <?php if ($producto['img_nombre'] != ''):?>
-          <img src="img_user/<?php echo $producto['img_nombre'] ?>" class="card-img-top" alt="...">
+          <img src="img_user/<?php echo $producto['img_nombre'] ?>" class="card-img-top mt-2" alt="...">
             <?php endif ?>
             <?php if ($producto['img_nombre'] == ''):?>
           <img src="img_user/ropa2.jpg" class="card-img-top" alt="...">
@@ -153,7 +155,7 @@ if ($_POST) {
               <a href="editar_producto.php?id=<?php echo $producto['pr_id'] ?>"><button id="boton"  type="button" name="button" class="btn btn-light m-2"><i class="fas fa-tag"></i>  Editar Producto</button></a>
             <?php endif ?>
          <?php endif ?>
-
+</div>
             </div>
           </div>
         <?php endforeach ?>
