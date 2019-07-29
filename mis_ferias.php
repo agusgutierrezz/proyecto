@@ -68,7 +68,7 @@ if ($_GET){
           <!---  <img src="./img_user/<?php // echo $feria["avatar"] ?>" alt="">  --->
           </div>
           <div class="boton-header">
-            <a href="feria.php?id=<?= $feria["fe_id"]?>" ><button type="button" name="button">EDITAR FERIA!</button></a>
+            <a href="editar_feria.php?id=<?= $feria["fe_id"]?>" ><button type="button" name="button">EDITAR FERIA!</button></a>
           </div>
           <div class="descripcion">
             <?php echo $feria["fe_descripcion"] ?>

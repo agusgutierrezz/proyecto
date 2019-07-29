@@ -27,6 +27,30 @@ function guardar_feria($db, $nombre, $desde, $hasta,  $ubicacion, $descripcion, 
      header("location: feria.php?id=".$id_feria['MAX(fe_id)']);
 }
 
+function actualizar_feria($db, $nombre, $desde, $hasta,  $ubicacion, $descripcion, $id, $pic_name, $ext){
+     $fecha_creacion = date("Y-m-d");
+     $id_usuario = traerUsuarioLogueado()["us_id"];
+     //$query = $db->prepare("INSERT into ferias values (default, $id_usuario, :nombre, :desde, :hasta, :ubicacion, :descripcion, '$fecha_creacion', null, null)");
+
+
+     $query -> bindParam(":nombre",$nombre, PDO::PARAM_STR);
+     $query -> bindParam(":desde",$desde, PDO::PARAM_STR);
+     $query -> bindParam(":hasta",$hasta, PDO::PARAM_STR);
+     $query -> bindParam(":ubicacion",$ubicacion, PDO::PARAM_STR);
+     $query -> bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
+     $query->execute();
+
+     //$query = $db->prepare("INSERT into imagenes values (default, null, (SELECT MAX(fe_id) FROM ferias), '$pic_name', null)");
+     $query->execute();
+     $miarchivo = dirname(_FILE_);
+     $miarchivo = $miarchivo. "/img_user/";
+     $miarchivo = $miarchivo. $pic_name;
+     move_uploaded_file( $archivo , $miarchivo);
+   $query = $db->prepare("SELECT MAX(fe_id) FROM ferias");
+   $query->execute();
+   $id_feria = $query->fetch(PDO::FETCH_ASSOC);
+     header("location: feria.php?id=".$id_feria['MAX(fe_id)']);
+}
 
 function feria($value){
 

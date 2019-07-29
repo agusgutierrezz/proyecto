@@ -1,12 +1,17 @@
 <?php
 include("./resources/funciones_usuarios.php");
+require_once("./resources/funciones_productos.php");
 if(!estaLogueado()){
    header("location: login.php");
    exit;
 }
 
 include("./resources/funciones_feria.php");
-
+if ($_GET){
+  $value = $_GET["id"];
+$datos_ferias =feria($value);
+  $datos_productos =productos_feria($value);
+}
 $nombre="";
 $ubicacion="";
 $errores =[];
@@ -45,7 +50,7 @@ if ($_POST) {
 
   if(empty($errores)){
 
-    guardar_feria(abrirBaseDeDatos(), $nombre, $desde, $hasta,  $ubicacion, $descripcion, $id, $pic_name, $ext);
+    guardar_feria(abrirBaseDeDatos(), $nombre, $ubicacion, $descripcion, $desde, $hasta, $id, $pic_name, $ext);
 
   }
 }
@@ -59,6 +64,7 @@ if ($_POST) {
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/crear_feria.css">
+<link rel="stylesheet" href="css/feria.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Pathway+Gothic+One|Source+Sans+Pro&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cookie|Inconsolata&display=swap" rel="stylesheet">
@@ -83,24 +89,24 @@ if ($_POST) {
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nombre"> Nombre de la feria <span>*</span></label>
-          <input type="nombre" class="form-control" id="nombre" placeholder="Nombre de tu feria" name="nombre" required>
+          <input type="nombre" class="form-control" id="nombre" placeholder="Nombre de tu feria" name="nombre" value="<?php echo $datos_ferias["fe_nombre"] ?>" required>
         </div>
         <div class="form-group col-md-6">
           <label for="ubicacion"> Ubicacion  <span>*</span></label>
-          <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion" name="ubicacion" required>
+          <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion" name="ubicacion"  value="<?php echo $datos_ferias["fe_ubicacion"] ?>" required>
         </div>
         <div class="form-group col-md-6">
           <label for="datepicker"> Desde <span>*</span></label>
-          <input type="text" class="form-control" id="datepicker" placeholder="fecha inicio" name="desde" required>
+          <input type="text" class="form-control" id="datepicker" placeholder="fecha inicio" name="desde"  value="<?php echo $datos_ferias["fe_desde"] ?>" required>
         </div>
         <div class="form-group col-md-6">
           <label for="datepicker1"> Hasta <span>*</span></label>
-          <input type="text" class="form-control" id="datepicker1" placeholder="fecha finalizacion" name="hasta" required>
+          <input type="text" class="form-control" id="datepicker1" placeholder="fecha finalizacion" name="hasta"  value="<?php echo $datos_ferias["fe_hasta"] ?>" required>
         </div>
         <script src="./js/crear_feria.js"></script>
         <div class="form-group col-md-6">
           <label for="descripcion"> Descripcion <span>*</span></label>
-          <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion">
+          <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion"  value="<?php echo $datos_ferias["fe_descripcion"] ?>">
         </div>
         <div class="foto">
           <div class="form-group col-md-6">
@@ -108,7 +114,7 @@ if ($_POST) {
             <div class="display">
             </div>
             <input type="file" id="upload" name="foto_feria">
-      <button type="submit"id="crear" class="btn btn-primary">Feriate!</button>
+      <button type="submit"id="crear" class="btn btn-primary">Actualizar!</button>
     </form>
     <ul>
       <?php foreach ($errores as $error) :?>
@@ -117,6 +123,41 @@ if ($_POST) {
     </ul>
     </div>
   </div>
+  <main>
+    <div class="producto">
+  <?php if(!empty($datos_productos)) :?>
+      <?php foreach ($datos_productos as $producto) :?>
+          <div class="card" >
+            <?php if ($producto['img_nombre'] != ''):?>
+          <img src="img_user/<?php echo $producto['img_nombre'] ?>" class="card-img-top" alt="...">
+            <?php endif ?>
+            <?php if ($producto['img_nombre'] == ''):?>
+          <img src="img_user/ropa2.jpg" class="card-img-top" alt="...">
+          <?php endif ?>
+          <div class="card-body">
+            <h4 class="card-text"><?php echo $producto['pr_nombre'] ?></h4>
+            <div class="descripcion">
+             <h3 class="precio"><b>Precio:<?php echo $producto['pr_precio'] ?></b><h3>
+             <h3 class="talle"><b>Talle:<?php echo $producto['pr_talle'] ?></b></h3>
+             <h3 class="marca"><b>Marca:<?php echo $producto['pr_marca'] ?></b></h3>
+           </div>
+           <div class="descripcion">
+             <h3 class="estado"><b>Estado:<?php echo $producto['pr_estado'] ?></b></h3>
+             <h3 class="cantidad"><b>Cantidad:<?php echo $producto['pr_cantidad'] ?></b></h3>
+            </div>
+        </div>
+            <div class="comprar">
+
+           <?php if(estaLogueado()):?>
+            <?php if(esDuenoDeFeria($value)):?>
+              <a href="editar_producto.php?id=<?php echo $producto['pr_id'] ?>"><button id="boton"  type="button" name="button" class="btn btn-light m-2"><i class="fas fa-tag"></i>  Editar Producto</button></a>
+            <?php endif ?>
+         <?php endif ?>
+
+            </div>
+          </div>
+        <?php endforeach ?>
+        <?php endif; ?>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
