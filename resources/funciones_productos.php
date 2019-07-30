@@ -58,7 +58,7 @@ global $db;
   $fecha_creacion = date("Y-m-d");
   $id_usuario = traerUsuarioLogueado()["us_id"];
   //var_dump('default', $nombre, $precio, $cantidad, $descripcion, 'null', 0, $id_feria, $id_categoria, $id_usuario ); exit;
-  //$query = $db->prepare("INSERT into productos values (default, :nombre, :precio, :cantidad, :descripcion, null, 0,:talle, :marca, :estado, $id_feria, $id_categoria, $id_usuario)");
+  $query = $db->prepare("UPDATE productos set pr_nombre = :nombre, pr_precio = :precio, pr_cantidad =:cantidad, pr_descripcion = :descripcion, pr_talle= :talle, pr_marca = :marca, pr_estado =:estado WHERE pr_id = $id_feria");
   $query -> bindParam(":nombre",$nombre, PDO::PARAM_STR);
   $query -> bindParam(":precio",$precio, PDO::PARAM_INT);
   $query -> bindParam(":cantidad",$cantidad, PDO::PARAM_INT);

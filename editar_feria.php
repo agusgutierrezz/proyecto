@@ -28,7 +28,9 @@ if ($_POST) {
   $pic_name = $_FILES["foto_feria"]["name"];
   $ext = pathinfo($_FILES["foto_feria"]["name"],PATHINFO_EXTENSION);
   $size = $_FILES["foto_feria"]["size"]/1000;
-  $id = rand(1, 9999999);
+  $id = parse_url($_SERVER['HTTP_REFERER']);
+  parse_str($id["query"],$query);
+  $fe_id = $query['id'];
 
   if(strlen($nombre) < 5) {
     $errores []= "El nombre debe teber al menos 5 caracteres";
@@ -50,7 +52,7 @@ if ($_POST) {
 
   if(empty($errores)){
 
-    guardar_feria(abrirBaseDeDatos(), $nombre, $ubicacion, $descripcion, $desde, $hasta, $id, $pic_name, $ext);
+    actualizar_feria(abrirBaseDeDatos(),$nombre, $desde, $hasta,  $ubicacion, $descripcion, $fe_id, $pic_name, $ext);
 
   }
 }
@@ -86,7 +88,7 @@ if ($_POST) {
     <div class="container">
       <h1>Crea tu feria</h1>
     <div class="registro">
-    <form method="post" action="crear_feria.php" enctype="multipart/form-data">
+    <form method="post" action="editar_feria.php" enctype="multipart/form-data">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nombre"> Nombre de la feria <span>*</span></label>
