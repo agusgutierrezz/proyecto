@@ -14,7 +14,7 @@ if ($_POST) {
 // Leer los datos del formulario
   $id = parse_url($_SERVER['HTTP_REFERER']);
   parse_str($id["query"],$query);
-  $id_feria = $query['feria'];
+  $id_feria = $query['id'];
   $nombre = $_POST["nombre"];
   $precio = $_POST["precio"];
   $cantidad = $_POST["cantidad"];
@@ -53,7 +53,7 @@ if ($_POST) {
     $miarchivo = $miarchivo. $pic_name;
     move_uploaded_file( $archivo , $miarchivo);
 
-    guardarProductos($nombre, $precio, $cantidad, $descripcion, $id_categoria,$marca, $talle, $estado, $pic_name, $ext, $id_feria);
+    actualizarProductos($nombre, $precio, $cantidad, $descripcion, $id_categoria,$marca, $talle, $estado, $pic_name, $ext, $id_feria);
     header("location: feria.php?id=$id_feria");
 
 
@@ -81,7 +81,7 @@ if ($_POST) {
   <div class="container">
 <h1>Vende tu producto!</h1>
 <main>
-  <form method="post" action="crear_producto.php" enctype="multipart/form-data">
+  <form method="post" action="editar_producto.php" enctype="multipart/form-data">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nombre"> Nombre <span>*</span></label>
