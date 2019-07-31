@@ -41,10 +41,10 @@ if ($_POST) {
       </header>
       <br>
       <?php if(isset($error)) :?>
-      <p style="color:red; font-size:12px;"><?=$error?></a></p>
+      <p class="alert alert-danger"><?=$error?></a></p>
       <?php endif; ?>
       <div class="field-set">
-        <input class="form-input" id="txt-input" type="email" placeholder="Email" name="email" required>
+        <input class="form-input mb-3 " id="txt-input" type="email" placeholder="Email" name="email" required>
         <br>
         <input class="form-input" type="password" placeholder="Contraseña" id="pwd" name="pass" required>
         <br>

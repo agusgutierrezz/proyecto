@@ -1,4 +1,10 @@
 <?php
+include("./resources/funciones_usuarios.php");
+if(!estaLogueado()){
+   header("location: login.php");
+   exit;
+}
+
 include("./resources/funciones_feria.php");
 
 $nombre="";
@@ -12,6 +18,8 @@ if ($_POST) {
   $descripcion = $_POST["descripcion"];
   $avatar = $_FILES["foto_feria"];
   $archivo = $_FILES["foto_feria"]["tmp_name"];
+  $desde = $_POST["desde"];
+  $hasta = $_POST["hasta"];
   $pic_name = $_FILES["foto_feria"]["name"];
   $ext = pathinfo($_FILES["foto_feria"]["name"],PATHINFO_EXTENSION);
   $size = $_FILES["foto_feria"]["size"]/1000;
@@ -36,17 +44,8 @@ if ($_POST) {
   }
 
   if(empty($errores)){
-    //guardar los datos en un archivo
-    //mover foto
 
-    $miarchivo = dirname(_FILE_);
-    $miarchivo = $miarchivo. "/img_user/";
-    $miarchivo = $miarchivo. $pic_name;
-    move_uploaded_file( $archivo , $miarchivo);
-
-    guardar_feria($nombre, $ubicacion, $descripcion, $id, $pic_name, $ext);
-    header("location: feria.php?id=$id");
-
+    guardar_feria(abrirBaseDeDatos(), $nombre, $desde, $hasta,  $ubicacion, $descripcion, $id, $pic_name, $ext);
 
   }
 }
@@ -98,12 +97,7 @@ if ($_POST) {
           <label for="datepicker1"> Hasta <span>*</span></label>
           <input type="text" class="form-control" id="datepicker1" placeholder="fecha finalizacion" name="hasta" required>
         </div>
-       <script>
-        $( function() {
-          $( "#datepicker" ).datepicker();
-          $( "#datepicker1" ).datepicker();
-        } );
-        </script>
+        <script src="./js/crear_feria.js"></script>
         <div class="form-group col-md-6">
           <label for="descripcion"> Descripcion <span>*</span></label>
           <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion">
@@ -114,9 +108,6 @@ if ($_POST) {
             <div class="display">
             </div>
             <input type="file" id="upload" name="foto_feria">
-          </div>
-          <a href="crear_producto.php" id="subir" class="btn btn-primary">Subi tus productos!</a>
-        </div>
       <button type="submit"id="crear" class="btn btn-primary">Feriate!</button>
     </form>
     <ul>

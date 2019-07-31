@@ -27,40 +27,40 @@ if ($_POST) {
    ?>
 </header>
   <body>
-  <div class="form">
-    <h1>Registro</h1>
+    <div class="container">
+      <h1 class="mt-3">Registrate!</h1>
     <form method="post" action="registro.php">
-      <div class="form-row">
-        <div class="form-group col-md-6">
+      <div class="field-set">
+        <div class="form-input mb-3 mt-3">
           <label for="nombre"> Nombre <span>*</span></label>
           <input type="nombre" class="form-control" id="nombre" placeholder="nombre" name="nombre" required value="<?=$nombre?>">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-input mb-3">
           <label for="apellido"> Apellido <span>*</span></label>
           <input type="apellido" class="form-control" id="apellido" placeholder="apellido" name="apellido" required value="<?=$apellido?>">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-input mb-3">
           <label for="email"> Email <span>*</span></label>
           <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-input mb-3">
           <label for="pass">Contraseña <span>*</span></label>
           <input type="password" class="form-control" id="pass" placeholder="Password" name="pass" required >
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-input mb-3">
           <label for="pass_confirm">Confirmacion contraseña<span>*</span></label>
           <input type="password" class="form-control" id="pass_confirm" placeholder="Password" name="pass_confirm" required >
         </div>
       </div>
       <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Quiero recibir novedades de Feriate!</label>
+      <input type="checkbox" class="form-check-input" id="notificaciones" name="notificaciones">
+      <label class="form-check-label" for="notificaciones">Quiero recibir novedades de Feriate!</label>
       </div>
       <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="terminos_condiciones" placeholder="Aceptar_terminos" name="aceptar_terminos" required >
+      <input type="checkbox" class="form-check-input" id="terminos_condiciones" placeholder="aceptar_terminos" name="aceptar_terminos" required>
       <label class="form-check-label" for="terminos_condiciones">Acepto <a href="./terminos_condiciones.php">Terminos y Condiciones</a></label>
       </div>
-      <button type="submit" class="btn btn-primary">Registrarme</button>
+      <button class="btn btn-primary btn-lg" type="submit" >Registrarme</button>
     </form>
     <ul>
       <?php foreach ($errores as $error) :?>

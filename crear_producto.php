@@ -16,9 +16,8 @@ if ($_POST) {
   $precio = $_POST["precio"];
   $cantidad = $_POST["cantidad"];
   $descripcion = $_POST["descripcion"];
-  $categoria = $_POST["categoria"];
+  $id_categoria = $_POST["categoria"];
   $talle = $_POST["talle"];
-  $marca = $_POST["marca"];
   $estado = $_POST["estado"];
   $foto_producto = $_FILES["foto_producto"];
   $archivo = $_FILES["foto_producto"]["tmp_name"];
@@ -51,7 +50,7 @@ if ($_POST) {
     $miarchivo = $miarchivo. $pic_name;
     move_uploaded_file( $archivo , $miarchivo);
 
-    guardarProductos($nombre, $precio, $cantidad, $descripcion, $categoria, $talle, $marca, $estado, $pic_name, $ext, $id_feria);
+    guardarProductos($nombre, $precio, $cantidad, $descripcion, $id_categoria,$marca, $talle, $estado, $pic_name, $ext, $id_feria);
     header("location: feria.php?id=$id_feria");
 
 
@@ -82,7 +81,7 @@ if ($_POST) {
   <form method="post" action="crear_producto.php" enctype="multipart/form-data">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="nombre"> Titulo <span>*</span></label>
+        <label for="nombre"> Nombre <span>*</span></label>
         <input type="nombre" class="form-control" id="nombre" placeholder="nombre de tu producto" name="nombre">
       </div>
       <div class="form-group col-md-6">
@@ -101,11 +100,10 @@ if ($_POST) {
         <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">Categoria<span>*</span></label>
           </div>
-            <select class="custom-select" id="inputGroupSelect01" name="estado">
-              <option selected>Ropa</option>
-         <option value="1">Muebles</option>
-         <option value="2">Jueguetes</option>
-         <option value="3">Electro</option>            <option value="4">Shoes</option>
+            <select class="custom-select" id="inputGroupSelect01" name="categoria">
+              <?php foreach (traerCategorias() as $categoria)  :?>
+                <option value="<?php echo $categoria["cat_id"] ?>"><?php echo $categoria["cat_nombre"] ?></option>
+              <?php endforeach;?>
        </select>
       </div>
         <div class="form-group col-md-4">
@@ -126,9 +124,9 @@ if ($_POST) {
           </div>
           <select class="custom-select" id="inputGroupSelect01" name="estado">
             <option selected>elige</option>
-            <option value="1">bueno</option>
-            <option value="2">malo</option>
-            <option value="3">nuevo</option>
+            <option value="bueno">bueno</option>
+            <option value="malo">malo</option>
+            <option value="nuevo">nuevo</option>
           </select>
               </div>
        </div>

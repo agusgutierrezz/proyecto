@@ -1,21 +1,28 @@
 <?php
-
+include("./resources/funciones_usuarios.php");
+if(!estaLogueado()){
+   header("location: login.php");
+   exit;
+}
+/*
+if(!esDuenodeFeria($id_feria)){
+   header("location: login.php");
+   exit;
+}
+*/
 if ($_GET){
 
   $usuario_id = $_GET["id"];
   function datos_mis_ferias($usuario_id){
-    $archivo = "./db/ferias.json";
-    //para leer y obtener el contenido del archivo
-    $json_content = file_get_contents($archivo);
-    //para convertir el contenido del archivo en un array
-    $array_content = json_decode($json_content,true);
-    $datos_ferias =[];
-    foreach ($array_content["ferias"] as $feria ) {
 
-      if($feria["usuario_id"] == $usuario_id){
-        array_push($datos_ferias, $feria) ;
-      }
-    }
+    global $db;
+
+     $query = $db->prepare("SELECT * FROM feriate_db.ferias
+                            LEFT JOIN imagenes ON
+                            img_fe_id = fe_id
+                            WHERE fe_us_id = $usuario_id");
+     $query->execute();
+     $datos_ferias = $query->fetchAll(PDO::FETCH_ASSOC);
     return $datos_ferias;
   }
 }
@@ -42,7 +49,7 @@ if ($_GET){
   </header>
   <div class="container">
     <div class="inicio">
-      <h1>MIS FERIAS</h1>
+      <h1>Mis ferias</h1>
     </div>
     <hr>
     <?php if(empty(datos_mis_ferias($usuario_id))) :?>
@@ -55,23 +62,23 @@ if ($_GET){
         <?php foreach (datos_mis_ferias($usuario_id) as $feria) :?>
         <div class="feria">
           <div class="header-feria">
-            <h3><?php echo $feria["nombre"] ?></h3>
-            <h5><?php echo $feria["ubicacion"] ?></h5>
+            <h3><?php echo $feria["fe_nombre"] ?></h3>
+            <h5><?php echo $feria["fe_ubicacion"] ?></h5>
             <img src="images/mapa.jpeg" alt="">
           <!---  <img src="./img_user/<?php // echo $feria["avatar"] ?>" alt="">  --->
           </div>
           <div class="boton-header">
-            <a href="feria.php?id=<?= $feria["id"]?>" ><button type="button" name="button">EDITAR FERIA!</button></a>
+            <a href="editar_feria.php?id=<?= $feria["fe_id"]?>" ><button type="button" name="button">EDITAR FERIA!</button></a>
           </div>
           <div class="descripcion">
-            <?php echo $feria["descripcion"] ?>
+            <?php echo $feria["fe_descripcion"] ?>
           </div>
           <div class="cuerpo-feria">
-            <?php if(!empty($feria["avatar"])) :?>
-              <img src="img_user/<?php echo $feria["avatar"] ?>" alt="">
-              <img src="img_user/<?php echo $feria["avatar"] ?>" alt="">
+            <?php if(!empty($feria["img_nombre"])) :?>
+              <img src="img_user/<?php echo $feria["img_nombre"] ?>" alt="">
+              <img src="img_user/<?php echo $feria["img_nombre"] ?>" alt="">
              <?php endif; ?>
-            <?php if(empty($feria["avatar"])) :?>
+            <?php if(empty($feria["img_nombre"])) :?>
                <img src="images/logo_feriate_deffault.png" alt="">
                <img src="images/logo_feriate_deffault_ii.png" alt="">
             <?php endif; ?>
