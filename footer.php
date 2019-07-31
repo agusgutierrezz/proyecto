@@ -4,6 +4,6 @@
     <a href="preguntas.php"><li>PREGUNTAS FRECUENTES</li></a>
     <a href="contacto.php"><li>CONTACTO</li></a>
     <li>DONACIONES</li>
-    <li>QUIENES SOMOS</li>
+    <a href="quienes_somos.php"><li>QUIENES SOMOS</li><a/>
   </ul>
 </footer>
